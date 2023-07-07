@@ -5,7 +5,7 @@ import SideBar from "../../components/SideBar";
 
 export default function Mapa() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBhqkmV1Q_X_RP1hyaivoVUjZJThyMcNX0",
+    googleMapsApiKey: process.env.GOOGLE_API_KEY!,
   });
 
   if (!isLoaded) return <div>Loading...</div>;
