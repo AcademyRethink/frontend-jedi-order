@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../screens/Home";
+import Home from "../screens/Home/LocomotivesView";
+import Mapa from "../screens/Map/MapView";
 import ErrorScreen from "../screens/ErrorScreen";
 import LoginScreen from "../screens/LoginScreen";
 
@@ -29,8 +30,8 @@ export const router = createBrowserRouter([
   //   path: "/my-account",
   //   element: <MyAccount />,
   // },
-  // {
-  //   path: "/map",
-  //   element: <Map />,
-  // },
+  {
+    path: "/map",
+    element: <Mapa />,
+  },
 ]);
