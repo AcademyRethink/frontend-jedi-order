@@ -1,3 +1,56 @@
+:root {
+  --primaria-01: #321100;
+  --primaria-02: #461901;
+  --primaria-03: #602809;
+  --primaria-04: #793a18;
+  --primaria-05: #9a4d23;
+
+  --secundria-01: #594e47;
+  --secundria-02: #403833;
+  --secundria-03: #26211e;
+  --secundria-04: #0d0b0a;
+
+  --secundria-201: #c26d40;
+  --secundria-202: #c25419;
+  --secundria-203: #883b11;
+  --secundria-204: #5c280c;
+
+  --secundria-301: #fff7f2;
+  --secundria-302: #ffefe5;
+  --secundria-303: #a04d18;
+  --secundria-304: #843807;
+
+  --cores-de-feedback-em-movimento: #103200;
+  --cores-de-feedback-em-movimento-2: #103200;
+  --cores-de-feedback-parado: #661200;
+  --cores-de-feedback-parado-2: #c3988e;
+  --cores-de-feedback-problema-de-equipagem: #9f0000;
+  --cores-de-feedback-problema-de-equipagem-2: #c3bb8e;
+  --cores-de-feedback-em-manuteno: #4d1d03;
+  --cores-de-feedback-em-manuteno-2: #c3a08e;
+
+  --destaque-01: #682d0d;
+  --destaque-02: #c25419;
+  --destaque-03: #dfb59f;
+  --destaque-04: #f2e2d9;
+
+  --font-h1: normal 500 3.2rem/120% "Roboto";
+  --font-h2: normal 700 2.8rem/120% "Roboto";
+  --font-h3: normal 400 2.4rem/120% "Roboto";
+  --font-h4: normal 400 2rem/120% "Roboto";
+  --plain-text-regular: normal 400 1.6rem/150% "Roboto";
+  --plain-text-medium: normal 500 1.6rem/150% "Roboto";
+  --plain-text-bold: normal 700 1.6rem/150% "Roboto";
+  --legend-text: normal 400 1.2rem/150% "Roboto";
+  --legend-text-bold: normal 700 1.2rem/100% "Roboto";
+
+  --size-xsmall: 2.4rem;
+  --size-small: 3.2rem;
+  --size-medium: 4rem;
+  --size-large: 6.4rem;
+  --size-xlarge: 8rem;
+}
+
 * {
   font-size: 10px;
   margin: 0;
