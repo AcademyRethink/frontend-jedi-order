@@ -3,6 +3,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
 import { GlobalProvider } from "./context/GlobalContext";
 
+
 const App = () => {
   return (
     <GlobalProvider>

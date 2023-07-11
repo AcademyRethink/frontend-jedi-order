@@ -3,6 +3,9 @@ import Home from "../screens/Home/LocomotivesView";
 import Mapa from "../screens/Map/MapView";
 import ErrorScreen from "../screens/ErrorScreen";
 import LoginScreen from "../screens/LoginScreen";
+import CenterPanel from "../screens/CenterPanel/CenterPanel";
+
+
 
 export const router = createBrowserRouter([
   {
@@ -14,10 +17,10 @@ export const router = createBrowserRouter([
     path: "/login",
     element: <LoginScreen />,
   },
-  // {
-  //   path: "/center-panel",
-  //   element: <CenterPanel />,
-  // },
+  {
+    path: "/center-panel",
+    element: <CenterPanel />,
+  },
   // {
   //   path: "/analysis",
   //   element: <Analysis />,
