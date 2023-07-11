@@ -1,38 +1,38 @@
 :root {
-  --primria-01: #321100;
-  --primria-02: #461901;
-  --primria-03: #602809;
-  --primria-04: #793a18;
-  --primria-05: #9a4d23;
+  --primary-01: #321100;
+  --primary-02: #461901;
+  --primary-03: #602809;
+  --primary-04: #793a18;
+  --primary-05: #9a4d23;
 
-  --secundria-01: #594e47;
-  --secundria-02: #403833;
-  --secundria-03: #26211e;
-  --secundria-04: #0d0b0a;
+  --secondary-01: #594e47;
+  --secondary-02: #403833;
+  --secondary-03: #26211e;
+  --secondary-04: #0d0b0a;
 
-  --secundria-201: #c26d40;
-  --secundria-202: #c25419;
-  --secundria-203: #883b11;
-  --secundria-204: #5c280c;
+  --secondary-201: #c26d40;
+  --secondary-202: #c25419;
+  --secondary-203: #883b11;
+  --secondary-204: #5c280c;
 
-  --secundria-301: #fff7f2;
-  --secundria-302: #ffefe5;
-  --secundria-303: #a04d18;
-  --secundria-304: #843807;
+  --secondary-301: #fff7f2;
+  --secondary-302: #ffefe5;
+  --secondary-303: #a04d18;
+  --secondary-304: #843807;
 
-  --cores-de-feedback-em-movimento: #103200;
-  --cores-de-feedback-em-movimento-2: #103200;
-  --cores-de-feedback-parado: #661200;
-  --cores-de-feedback-parado-2: #c3988e;
-  --cores-de-feedback-problema-de-equipagem: #9f0000;
-  --cores-de-feedback-problema-de-equipagem-2: #c3bb8e;
-  --cores-de-feedback-em-manuteno: #4d1d03;
-  --cores-de-feedback-em-manuteno-2: #c3a08e;
+  --feedback-color-running: #103200;
+  --feedback-color-running-2: #103200;
+  --feedback-color-stopped: #661200;
+  --feedback-color-stopped-2: #c3988e;
+  --feedback-color-equipament-problem: #9f0000;
+  --feedback-color-equipament-problem-2: #c3bb8e;
+  --feedback-color-maintenance: #4d1d03;
+  --feedback-color-maintenance-2: #c3a08e;
 
-  --destaque-01: #682d0d;
-  --destaque-02: #c25419;
-  --destaque-03: #dfb59f;
-  --destaque-04: #f2e2d9;
+  --highlight-01: #682d0d;
+  --highlight-02: #c25419;
+  --highlight-03: #dfb59f;
+  --highlight-04: #f2e2d9;
 
   --font-h1: normal 500 3.2rem/120% "Roboto";
   --font-h2: normal 700 2.8rem/120% "Roboto";
