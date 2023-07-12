@@ -1,0 +1,24 @@
+.inputCamp {
+   display: flex;
+   flex-direction: column;
+   gap: 10px; 
+}
+
+.inputCamp label {
+   font:  normal 700 1.2rem/100% "Roboto";
+ }
+
+.customInput{
+    border: 1px solid #461901;
+    border-radius: 8px;
+    padding: 16px 20px;
+    width: 384px;
+    height: 56px;   
+    font: normal 400 1.6rem/150% "Roboto";
+
+}
+
+.customInput::placeholder{
+   font: normal 400 1.6rem/150% "Roboto";
+   color: #461901;
+}

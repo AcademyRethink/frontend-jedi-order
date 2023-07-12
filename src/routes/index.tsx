@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorScreen />,
   },
   {
-    path: "/login",
+    path: "/user/login",
     element: <LoginScreen />,
   },
   // {

@@ -1,17 +1,38 @@
 import "./styles.css";
-import Loading from "./loading";
-import useLoginScreenViewController from "./useLoginScreenViewController";
-import { useEffect } from "react";
+import Input from "../../components/Input";
 
 const LoginScreen = () => {
-  const { isLoading, setIsLoading } = useLoginScreenViewController();
+  return (
+    <div className="containerLogin">
+      <div className="loginCard">
+        <form className="loginForm">
+          <h1>Olá, acesse a sua conta </h1>
+          <div className="emailInput">
+            <Input
+              name="email"
+              placeholder="Digite o seu e-mail"
+              type= "email"
+              label="Email"
+              required
+            />
+            <p>Ex: emailexemplo@hotmail.com</p>
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-  }, [setIsLoading]);
-  return <>{isLoading && <Loading />}</>;
+          </div>
+          <Input
+            name='Senha'
+            placeholder='Digite a sua senha'
+            type='password'
+            label="Senha"
+            required
+          />
+          <div className="button">
+            <button className="btn-Login" type="submit">Entrar</button>
+            <a href="">Precisa de ajuda?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default LoginScreen;
