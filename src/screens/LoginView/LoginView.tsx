@@ -1,7 +1,7 @@
 import "./styles.css";
 import Input from "../../components/Input";
 
-const LoginScreen = () => {
+const LoginView = () => {
   return (
     <div className="containerLogin">
       <div className="loginCard">
@@ -15,8 +15,7 @@ const LoginScreen = () => {
               label="Email"
               required
             />
-            <p>Ex: emailexemplo@hotmail.com</p>
-
+            <p>Ex: emailexemplo@exemplo.com</p>
           </div>
           <Input
             name='Senha'
@@ -35,4 +34,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default LoginView;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useLoginScreenViewController = () => {
+const useLoginViewController = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return {
@@ -9,4 +9,4 @@ const useLoginScreenViewController = () => {
   };
 };
 
-export default useLoginScreenViewController;
+export default useLoginViewController;

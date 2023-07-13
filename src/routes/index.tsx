@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../screens/Home/LocomotivesView";
 import Mapa from "../screens/Map/MapView";
 import ErrorScreen from "../screens/ErrorScreen";
-import LoginScreen from "../screens/LoginScreen";
+import LoginView from "../screens/LoginView/LoginView";
 
 export const router = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/user/login",
-    element: <LoginScreen />,
+    element: <LoginView />,
   },
   // {
   //   path: "/center-panel",
