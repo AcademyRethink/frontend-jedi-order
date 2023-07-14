@@ -37,7 +37,7 @@
   --font-h1: normal 500 3.2rem/120% "Roboto";
   --font-h2: normal 700 2.8rem/120% "Roboto";
   --font-h3: normal 400 2.4rem/120% "Roboto";
-  --font-h4: normal 400 2rem/120% "Roboto";
+  --font-h4: normal 500 2rem/120% "Roboto";
   --plain-text-regular: normal 400 1.6rem/150% "Roboto";
   --plain-text-medium: normal 500 1.6rem/150% "Roboto";
   --plain-text-bold: normal 700 1.6rem/150% "Roboto";
@@ -49,6 +49,22 @@
   --size-medium: 4rem;
   --size-large: 6.4rem;
   --size-xlarge: 8rem;
+}
+
+h1 {
+  font: var(--font-h1);
+}
+
+h2 {
+  font: var(--font-h2);
+}
+
+h3 {
+  font: var(--font-h3);
+}
+
+h4 {
+  font: var(--font-h4);
 }
 
 * {
