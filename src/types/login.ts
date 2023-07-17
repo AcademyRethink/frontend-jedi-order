@@ -4,4 +4,10 @@ export type InputProps = {
   type: string;
   required?: boolean;
   label?: String;
+  tabIndex: number;
+};
+
+export type LoginRequest = {
+  email: string;
+  password: string;
 };

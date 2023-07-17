@@ -1,32 +1,41 @@
 import "./styles.css";
 import Input from "../../components/Input";
+import useLoginViewController from "./useLoginViewController";
 
 const LoginView = () => {
+  const { handleSubmit, errorMessage } = useLoginViewController()
+
   return (
     <div className="containerLogin">
       <div className="loginCard">
-        <form className="loginForm">
-          <h1>Olá, acesse a sua conta </h1>
-          <div className="emailInput">
+        <form className="loginForm" onSubmit={handleSubmit}>
+          <h1>Tecnovia </h1>
+          <h3>Olá, acesse a sua conta</h3>
+          <div className="inputsLogin">
+            <div className="emailInput">
+              <Input
+                name="email"
+                placeholder="Digite o seu e-mail"
+                type= "email"
+                label="Email"
+                required
+                tabIndex={0}
+              />
+              <p>Ex: emailexemplo@exemplo.com</p>
+            </div>
             <Input
-              name="email"
-              placeholder="Digite o seu e-mail"
-              type= "email"
-              label="Email"
+              name="senha"
+              placeholder="Digite a sua senha"
+              type="password"
+              label="Senha"
               required
+              tabIndex={0}
             />
-            <p>Ex: emailexemplo@exemplo.com</p>
           </div>
-          <Input
-            name='Senha'
-            placeholder='Digite a sua senha'
-            type='password'
-            label="Senha"
-            required
-          />
+          {errorMessage && <p className="error">{errorMessage}</p>}
           <div className="button">
-            <button className="btn-Login" type="submit">Entrar</button>
-            <a href="">Precisa de ajuda?</a>
+            <button className="btn-Login" type="submit" tabIndex={0}>Entrar</button>
+            <a href="" tabIndex={0}>Precisa de Ajuda?</a>
           </div>
         </form>
       </div>

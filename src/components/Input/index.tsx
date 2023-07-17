@@ -5,7 +5,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 
-const Input : React.FC<InputProps>= ({name, placeholder,type, required, label}) => {
+const Input : React.FC<InputProps>= ({name, placeholder,type, required, label,tabIndex}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -16,7 +16,8 @@ const Input : React.FC<InputProps>= ({name, placeholder,type, required, label}) 
         name={name}
         placeholder={placeholder}
         type= {type === 'password' ? (showPassword ? 'text' : 'password') : type}
-        required={required} />
+        required={required} 
+        tabIndex={tabIndex}/>
 
         {type === 'password' && (
             <i
