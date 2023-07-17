@@ -1,0 +1,17 @@
+.primary-button{
+display: flex;
+width: 160px;
+padding: 12px 16px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 8px;
+background: var(--primary-02, #461901);
+color: var(--secondary-301, #FFF7F2);
+text-align: center;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 24px */
+ };
