@@ -1,15 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Mapa from "../screens/Map/MapView";
-import ErrorScreen from "../screens/ErrorScreen";
 import CenterPanel from "../screens/CenterPanel/CenterPanel";
 import LoginView from "../screens/LoginView/LoginView";
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <ErrorScreen />,
-  },
   {
     path: "/user/login",
     element: <LoginView />,
@@ -17,6 +11,10 @@ export const router = createBrowserRouter([
   {
     path: "/center-panel",
     element: <CenterPanel />,
+  },
+  {
+    path: "/map",
+    element: <Mapa />,
   },
   // {
   //   path: "/analysis",
@@ -30,8 +28,4 @@ export const router = createBrowserRouter([
   //   path: "/my-account",
   //   element: <MyAccount />,
   // },
-  {
-    path: "/map",
-    element: <Mapa />,
-  },
 ]);
