@@ -1,7 +1,7 @@
 import "./styles.css";
 
 const MapCenterPanel = () => {
-  return <div className="oi3">oi3</div>;
+  return <div className="map">MAAAAPAAA</div>;
 };
 
 export default MapCenterPanel;

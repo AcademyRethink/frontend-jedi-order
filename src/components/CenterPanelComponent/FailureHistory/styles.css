@@ -1,0 +1,63 @@
+.failureHistory {
+  width: 69.6rem;
+  height: 43.2rem;
+  margin-left: 4.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.failureHistory .text {
+  color: var(--secondary-03, #26211e);
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 3.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.failureHistory .StatusOflocomotive .title {
+  background-color: #833c15;
+  color: #fff7f2;
+  height: 4rem;
+  width: 69.6rem;
+  border-radius: 8px 8px 0px 0px;
+  padding: 0.8rem 3.2rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.time {
+  color: #fff7f2;
+  font-size: 2.4rem;
+  font-weight: 500;
+  width: 8rem;
+  padding-left: 1rem;
+}
+
+.date {
+  color: #fff7f2;
+  font-size: 2.4rem;
+  font-weight: 400;
+  width: 8rem;
+}
+
+.statusDescriptions {
+  height: 5.6rem;
+  display: flex;
+  justify-content: space-around;
+  width: 69.6rem;
+  padding: 1.6rem 3.2rem;
+  color: #602809;
+  font-size: 1.6rem;
+  font-weight: 400;
+  border-bottom: 1px solid #c27442;
+  margin-bottom: 1.6rem;
+}
+
+.StatusOflocomotive .title .imageAndWriting {
+  flex: 1;
+}

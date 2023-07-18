@@ -1,5 +1,5 @@
-.overview-screen{
-    display: flex;
-    height: 100vh;
-    background-color: pink;
+.screen{
+    width: 144rem;
+    height: 102.4rem;
+    background-color: #FFF7F2;
 }
