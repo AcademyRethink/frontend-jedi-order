@@ -2,10 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../screens/Home/LocomotivesView";
 import Mapa from "../screens/Map/MapView";
 import ErrorScreen from "../screens/ErrorScreen";
-import LoginScreen from "../screens/LoginScreen";
 import CenterPanel from "../screens/CenterPanel/CenterPanel";
-
-
+import LoginView from "../screens/LoginView/LoginView";
 
 export const router = createBrowserRouter([
   {
@@ -14,8 +12,8 @@ export const router = createBrowserRouter([
     errorElement: <ErrorScreen />,
   },
   {
-    path: "/login",
-    element: <LoginScreen />,
+    path: "/user/login",
+    element: <LoginView />,
   },
   {
     path: "/center-panel",
