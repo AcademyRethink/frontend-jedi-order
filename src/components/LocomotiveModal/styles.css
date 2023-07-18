@@ -1,0 +1,183 @@
+.locomotive-modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 51.2rem;
+  background-color: var(--secondary-301);
+}
+
+.locomotive-modal-header {
+  width: 100%;
+  border-bottom: 1px solid var(--secondary-303);
+}
+
+.locomotive-modal-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--size-xsmall);
+}
+
+.locomotive-modal-header-content button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.locomotive-title-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.icon-size {
+  transform: scale(1.6);
+}
+
+.locomotive-modal-train-icon,
+.locomotive-modal-close-icon {
+  color: var(--secondary-204);
+}
+
+.locomotive-title-container h3 {
+  color: var(--secondary-204);
+}
+
+.locomotive-modal-info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 3.1rem;
+  padding: 0 var(--size-xsmall);
+}
+
+.locomotive-modal-about-info-title {
+  margin-bottom: 2.4rem;
+}
+
+.locomotive-modal-about-info-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.locomotive-modal-about-info-box h4 {
+  color: var(--secondary-04);
+}
+
+.locomotive-modal-about-info-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.locomotive-modal-about-info-detail p {
+  font: var(--plain-text-regular);
+}
+
+.locomotive-modal-about-info-detail {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.locomotive-modal-line {
+  height: 0.1rem;
+  width: 28.8rem;
+  margin: 4rem 0;
+  background-color: var(--highlight-03);
+}
+
+.locomotive-modal-location-info-box {
+  width: 100%;
+}
+
+.locomotive-modal-location-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.locomotive-modal-location-title-box h4 {
+  color: var(--secondary-04);
+}
+
+.locomotive-modal-location h2 {
+  font: var(--plain-text-regular);
+  font-size: 2rem;
+}
+
+.locomotive-modal-location {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.locomotive-modal-route-info-box {
+  display: flex;
+  width: 100%;
+  margin-top: 2.4rem;
+  gap: 1.2rem;
+}
+
+.locomotive-modal-route-info-box img {
+  margin-top: 3.6rem;
+}
+
+.locomotive-modal-route-info-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 2.9rem;
+}
+
+.locomotive-modal-route-field-box label {
+  color: #1c1c1c;
+  font: var(--legend-text-bold);
+}
+
+.city-field {
+  display: flex;
+  align-items: flex-start;
+  width: 38.4rem;
+  padding: 1.6rem 2.4rem;
+  border-radius: 0.4rem;
+  border: 0.2rem solid var(--primary-02);
+  margin-top: 0.8rem;
+}
+
+.city-field h2 {
+  color: var(--primary-02);
+  font: var(--plain-text-regular);
+  font-size: 2rem;
+}
+
+.locomotive-modal-date-info-box {
+  display: flex;
+  gap: 2.4rem;
+  width: 44rem;
+  margin-top: 2.9rem;
+  margin-bottom: 5.5rem;
+}
+
+.locomotive-modal-date-info-box label {
+  color: #1c1c1c;
+  font: var(--legend-text-bold);
+}
+
+.date-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20.8rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.8rem;
+  border: 0.2rem solid var(--primary-02);
+  margin-top: 0.4rem;
+}
+
+.date-field h2 {
+  color: var(--primary-02);
+  font: var(--plain-text-regular);
+  font-size: 2rem;
+}

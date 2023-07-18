@@ -1,29 +1,31 @@
 import { useCallback } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
-import {
-  fetchAllLocomotives,
-  fetchFilteredLocomotives,
-  fetchLocomotivesOverview,
-} from "./api/locomotives";
+import locomotiveAPI from "./api/locomotives";
 import { LocomotiveFilterOptions } from "../types/locomotives";
 
 const useLocomotiveModel = () => {
-  const { globalState, setGlobalState } = useGlobalContext();
-
-  const locomotivesData = globalState.locomotivesData;
-  const locomotivesOverviewData = globalState.locomotivesOverviewData;
+  const { setGlobalState } = useGlobalContext();
 
   const getLocomotives = useCallback(async () => {
-    const locomotives = await fetchAllLocomotives();
+    const locomotives = await locomotiveAPI.fetchAllLocomotives();
+    const routes = await locomotiveAPI.fetchRoutes();
+    const locomotivesPosition = await locomotiveAPI.fetchLocomotivesPosition();
+    const locomotivesOverview = await locomotiveAPI.fetchLocomotivesOverview();
+
     setGlobalState((prevState) => ({
       ...prevState,
       locomotivesData: locomotives,
+      routesData: routes,
+      locomotivesRouteDetails: locomotivesPosition,
+      locomotivesOverviewData: locomotivesOverview,
     }));
   }, [setGlobalState]);
 
   const getFilteredLocomotives = useCallback(
     async (filter: LocomotiveFilterOptions) => {
-      const filteredLocomotives = await fetchFilteredLocomotives(filter);
+      const filteredLocomotives = await locomotiveAPI.fetchFilteredLocomotives(
+        filter
+      );
       setGlobalState((prevState) => ({
         ...prevState,
         locomotivesData: filteredLocomotives,
@@ -32,20 +34,9 @@ const useLocomotiveModel = () => {
     [setGlobalState]
   );
 
-  const getLocomotivesOverview = useCallback(async () => {
-    const locomotivesOverview = await fetchLocomotivesOverview();
-    setGlobalState((prevState) => ({
-      ...prevState,
-      locomotivesOverviewData: locomotivesOverview,
-    }));
-  }, [setGlobalState]);
-
   return {
-    locomotives: locomotivesData,
     getLocomotives,
     getFilteredLocomotives,
-    locomotivesOverview: locomotivesOverviewData,
-    getLocomotivesOverview,
   };
 };
 
