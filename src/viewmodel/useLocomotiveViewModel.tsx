@@ -1,20 +1,11 @@
 import useLocomotiveModel from "../model/useLocomotiveModel";
 
 const useLocomotiveViewModel = () => {
-  const {
-    locomotives,
-    getLocomotives,
-    getFilteredLocomotives,
-    locomotivesOverview,
-    getLocomotivesOverview,
-  } = useLocomotiveModel();
+  const { getLocomotives, getFilteredLocomotives } = useLocomotiveModel();
 
   return {
-    locomotives,
     getLocomotives,
     getFilteredLocomotives,
-    locomotivesOverview,
-    getLocomotivesOverview,
   };
 };
 

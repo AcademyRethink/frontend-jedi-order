@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../screens/Home/LocomotivesView";
 import Mapa from "../screens/Map/MapView";
 import ErrorScreen from "../screens/ErrorScreen";
 import CenterPanel from "../screens/CenterPanel/CenterPanel";
