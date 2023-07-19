@@ -1,5 +1,6 @@
-.screen{
-    width: 144rem;
-    height: 102.4rem;
-    background-color: #FFF7F2;
+.screen {
+  width: 144rem;
+  height: 102.4rem;
+  background-color: #fff7f2;
+  display: flex;
 }

@@ -22,13 +22,12 @@ const Mapa = () => {
       </div>
     );
   return (
-    <div className="screen">
+    <div className="map-view-screen">
       <SideBar />
       <div className="map-screen">
         <div className="locomotive-modal">
           {modalDetails.isOpen && modalDetails.locomotive && (
             <LocomotiveModal
-              key={modalDetails.locomotive.id}
               locomotiveName={modalDetails.locomotive.name}
               locomotiveDriver={modalDetails.locomotive.driverName}
               locomotiveLoad={modalDetails.locomotive.load}
@@ -48,6 +47,7 @@ const Mapa = () => {
             globalState.locomotivesRouteDetails.map((locomotive) => {
               return (
                 <Marker
+                  key={locomotive.id}
                   locomotive={locomotive}
                   handleOnClick={() =>
                     handleClickOnLocomotiveMarker(locomotive)
