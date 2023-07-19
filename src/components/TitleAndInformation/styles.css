@@ -1,0 +1,13 @@
+.infoAccount {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    width: 19.8rem;
+    
+}
+
+.infoAccount p{
+    font: var(--plain-text-regular);
+    font-size: 1.2rem;
+}

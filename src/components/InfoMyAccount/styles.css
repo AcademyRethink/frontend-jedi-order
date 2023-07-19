@@ -1,0 +1,53 @@
+.containerMyAccountInfo{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5.6rem;
+}
+
+.myAccountInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32.8rem;
+}
+
+.containerInfoUser{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.2rem;
+}
+.containerPlanInfo{
+    display: flex;
+    width: 90.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
+}
+
+.statusPlan{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 19.8rem;
+}
+
+.statusPlan p{
+    font: var(--legend-text-bold);
+    font-size: 1.2rem;
+}
+
+.passwordCamp {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 14.4rem;
+}
+
+.passwordCamp a{
+    text-decoration-line: underline;
+    font: var(----legend-text);
+    color: #000;
+}

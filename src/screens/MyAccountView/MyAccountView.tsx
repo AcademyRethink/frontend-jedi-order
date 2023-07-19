@@ -1,6 +1,8 @@
 import './styles.css'
 import SideBar from '../../components/SideBar'
 import Line from '../../components/Line'
+import InfoMyAccount from '../../components/InfoMyAccount/Index'
+import ButtonLogout from '../../components/ButtonLogout'
 
 const MyAccountView = () => {
   return (
@@ -12,7 +14,10 @@ const MyAccountView = () => {
                 <p>Gerencie sua conta e visualize as suas informações </p>
             </div>
             <Line/>
+            <InfoMyAccount/>
+            <ButtonLogout/>
         </div>
+        
    </div>
   )
 }
