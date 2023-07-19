@@ -48,23 +48,6 @@
   border-left: 0.1rem solid var(--highlight-03);
 }
 
-.locomotive-status-subtitle-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8rem 2.8rem;
-}
-
-.locomotive-status-subtitle-item img {
-  width: 6.4rem;
-  height: 6.4rem;
-}
-
-.locomotive-status-subtitle-item h4 {
-  font: var(--legend-text);
-  color: var(--secondary-03);
-}
-
 .map-container {
   width: 100%;
   height: 100%;

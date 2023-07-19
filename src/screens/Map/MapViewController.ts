@@ -1,5 +1,5 @@
 import { useLoadScript } from "@react-google-maps/api";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import {
   LocomotiveDTO,
   LocomotiveRoutePositionDTO,
@@ -40,7 +40,7 @@ const useMapViewController = () => {
     locomotive: LocomotiveRoutePositionDTO
   ) => {
     const locomotiva = globalState.locomotivesData?.find(
-      (locomotiva) => locomotiva.id === locomotive.id
+      (locomotiveToFind) => locomotiveToFind.id === locomotive.id
     );
     setModalDetails({
       isOpen: true,
@@ -50,14 +50,14 @@ const useMapViewController = () => {
     });
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setModalDetails({
       isOpen: !modalDetails.isOpen,
       locomotive_id: modalDetails.locomotive_id,
       locomotive: modalDetails.locomotive,
       locomotive_route: modalDetails.locomotive_route,
     });
-  };
+  }, [modalDetails]);
 
   return {
     isLoaded,

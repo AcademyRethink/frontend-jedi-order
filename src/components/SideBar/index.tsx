@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Skeletons from "../Skeleton";
 import "./styles.css";
 
@@ -25,4 +26,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default memo(SideBar);

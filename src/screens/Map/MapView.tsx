@@ -4,6 +4,7 @@ import Marker from "../../components/Marker";
 import SideBar from "../../components/SideBar";
 import LocomotiveModal from "../../components/LocomotiveModal";
 import useMapViewController from "./MapViewController";
+import LocomotiveStatusSubtitle from "../../components/LocomotiveStatusSubtitle";
 
 const Mapa = () => {
   const {
@@ -33,7 +34,7 @@ const Mapa = () => {
               locomotiveLoad={modalDetails.locomotive.load}
               locomotiveStatus={modalDetails.locomotive.status}
               locomotiveRoute={modalDetails.locomotive_route}
-              handleOnClick={handleCloseModal}
+              onClick={handleCloseModal}
             />
           )}
         </div>
@@ -49,50 +50,49 @@ const Mapa = () => {
                 <Marker
                   key={locomotive.id}
                   locomotive={locomotive}
-                  handleOnClick={() =>
-                    handleClickOnLocomotiveMarker(locomotive)
-                  }
+                  onClick={() => handleClickOnLocomotiveMarker(locomotive)}
                 />
               );
             })}
         </GoogleMap>
         <div className="locomotive-status-subtitle">
-          <div className="locomotive-status-subtitle-item first-status-child">
-            <img
-              src="./marker-running.svg"
-              alt="Marcador locomotiva em movimento"
-            />
-            <h4>
-              Em<br></br>movimento
-            </h4>
-          </div>
-          <div className="locomotive-status-subtitle-item">
-            <img
-              src="./marker-stopped.svg"
-              alt="Marcador locomotiva em movimento"
-            />
-            <h4>
-              Locomotiva<br></br>parada
-            </h4>
-          </div>
-          <div className="locomotive-status-subtitle-item">
-            <img
-              src="./marker-maintenance.svg"
-              alt="Marcador locomotiva em movimento"
-            />
-            <h4>
-              Em<br></br>manutenção
-            </h4>
-          </div>
-          <div className="locomotive-status-subtitle-item">
-            <img
-              src="./marker-problem.svg"
-              alt="Marcador locomotiva em movimento"
-            />
-            <h4>
-              Problema de<br></br>equipagem
-            </h4>
-          </div>
+          <LocomotiveStatusSubtitle
+            icon="./marker-running.svg"
+            border
+            iconAltText="Marcador locomotiva em movimento"
+            text={
+              <>
+                Em <br /> movimento
+              </>
+            }
+          />
+          <LocomotiveStatusSubtitle
+            icon="./marker-stopped.svg"
+            iconAltText="Marcador locomotiva parada"
+            text={
+              <>
+                Locomotiva <br /> parada
+              </>
+            }
+          />
+          <LocomotiveStatusSubtitle
+            icon="./marker-maintenance.svg"
+            iconAltText="Marcador locomotiva em manutenção"
+            text={
+              <>
+                Em <br /> manutenção
+              </>
+            }
+          />
+          <LocomotiveStatusSubtitle
+            icon="./marker-problem.svg"
+            iconAltText="Marcador locomotiva com problema de equipagem"
+            text={
+              <>
+                Problema de <br /> equipagem
+              </>
+            }
+          />
         </div>
       </div>
     </div>

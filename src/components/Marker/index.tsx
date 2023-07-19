@@ -4,10 +4,10 @@ import { LocomotiveRoutePositionDTO } from "../../types/locomotives";
 
 type MarkerProps = {
   locomotive: LocomotiveRoutePositionDTO;
-  handleOnClick: () => void;
+  onClick: () => void;
 };
 
-const Marker = ({ locomotive, handleOnClick }: MarkerProps) => {
+const Marker = ({ locomotive, onClick }: MarkerProps) => {
   const { globalState } = useGlobalContext();
 
   const markerIcon = {
@@ -22,7 +22,7 @@ const Marker = ({ locomotive, handleOnClick }: MarkerProps) => {
     <MarkerF
       key={locomotive.id}
       clickable
-      onClick={handleOnClick}
+      onClick={onClick}
       icon={markerIcon[locomotive.status]}
       position={{
         lat: Number(
