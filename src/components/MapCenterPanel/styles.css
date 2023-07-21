@@ -1,0 +1,9 @@
+.center-panel-map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 3rem 13rem;
+  border-radius: 0.8rem;
+}

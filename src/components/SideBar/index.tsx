@@ -1,5 +1,5 @@
+import { memo } from "react";
 import Menu from "../Menu";
-import Skeletons from "../Skeleton";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import "./styles.css";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
@@ -9,7 +9,7 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 const SideBar = () => {
   return (
     <div className="sideBarContainer">
-      <div className="expandButton">
+      <div className="side-bar-logo-image">
         <img src={"/Vector.png"} alt="logo: Tecnovia" />
       </div>
       <div className="menuContainer">
@@ -33,4 +33,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default memo(SideBar);

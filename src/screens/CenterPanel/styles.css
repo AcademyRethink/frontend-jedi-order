@@ -1,6 +1,23 @@
-.screen {
-  width: 144rem;
-  height: 102.4rem;
-  background-color: #fff7f2;
+.center-panel-screen-container {
+  background-color: var(--secondary-301);
   display: flex;
+  height: 100vh;
+}
+
+.overview-info {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.admLocomotives {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.map-overview-container {
+  width: 50%;
 }

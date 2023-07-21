@@ -6,6 +6,8 @@ import TrainOutlinedIcon from "@mui/icons-material/TrainOutlined";
 import TrackChangesOutlinedIcon from "@mui/icons-material/TrackChangesOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import { memo } from "react";
+import InfoBoxWithLabel from "../InfoBoxWithLabel";
 
 type LocomotiveDetailProps = {
   locomotiveName: string;
@@ -13,7 +15,7 @@ type LocomotiveDetailProps = {
   locomotiveDriver: string;
   locomotiveLoad: string;
   locomotiveRoute: string;
-  handleOnClick: () => void;
+  onClick: () => void;
 };
 
 type Routes = {
@@ -30,7 +32,7 @@ const LocomotiveModal = ({
   locomotiveDriver,
   locomotiveLoad,
   locomotiveRoute,
-  handleOnClick,
+  onClick,
 }: LocomotiveDetailProps) => {
   const routeNames: Routes = {
     route1: {
@@ -58,7 +60,7 @@ const LocomotiveModal = ({
             <TrainOutlinedIcon className="icon-size locomotive-modal-train-icon" />
             <h3>{locomotiveName}</h3>
           </div>
-          <button onClick={handleOnClick}>
+          <button onClick={onClick}>
             <CloseIcon className="icon-size locomotive-modal-close-icon" />
           </button>
         </div>
@@ -103,39 +105,31 @@ const LocomotiveModal = ({
             <img src="./route-dots.svg" alt="Location dots icons" />
           </div>
           <div className="locomotive-modal-route-info-fields">
-            <div className="locomotive-modal-route-field-box">
-              <label htmlFor="Origem">Origem</label>
-              <div className="city-field">
-                <h2>{routeNames[locomotiveRoute].from}</h2>
-              </div>
-            </div>
-            <div className="locomotive-modal-route-field-box">
-              <label htmlFor="Destino">Destino</label>
-              <div className="city-field">
-                <h2>{routeNames[locomotiveRoute].to}</h2>
-              </div>
-            </div>
+            <InfoBoxWithLabel
+              label={"Origem"}
+              text={routeNames[locomotiveRoute].from}
+            />
+            <InfoBoxWithLabel
+              label={"Destino"}
+              text={routeNames[locomotiveRoute].to}
+            />
           </div>
         </div>
         <div className="locomotive-modal-date-info-box">
-          <div className="locomotive-modal-date-field-box">
-            <label htmlFor="Partida">Partida</label>
-            <div className="date-field">
-              <h2>01/06/2023</h2>
-              <CalendarTodayIcon />
-            </div>
-          </div>
-          <div className="locomotive-modal-date-field-box">
-            <label htmlFor="Chegada">Chegada</label>
-            <div className="date-field">
-              <h2>------</h2>
-              <CalendarTodayIcon />
-            </div>
-          </div>
+          <InfoBoxWithLabel
+            label={"Partida"}
+            text={"02/06/2023"}
+            iconChildren={<CalendarTodayIcon />}
+          />
+          <InfoBoxWithLabel
+            label={"Chegada"}
+            text={"------"}
+            iconChildren={<CalendarTodayIcon />}
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default LocomotiveModal;
+export default memo(LocomotiveModal);

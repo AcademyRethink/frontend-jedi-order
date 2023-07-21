@@ -1,17 +1,11 @@
-import { useLoadScript } from "@react-google-maps/api";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import {
   LocomotiveDTO,
   LocomotiveRoutePositionDTO,
 } from "../../types/locomotives";
 import { useGlobalContext } from "../../context/GlobalContext";
-import { useLocomotivesPosition } from "../../hooks/useLocomotivesPosition";
 
 const useMapViewController = () => {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_API_KEY!,
-  });
-
   const [modalDetails, setModalDetails] = useState<{
     isOpen: boolean;
     locomotive_id: number;
@@ -26,8 +20,6 @@ const useMapViewController = () => {
 
   const { globalState } = useGlobalContext();
 
-  useLocomotivesPosition();
-
   const center = useMemo(
     () => ({
       lat: -19.83282,
@@ -36,11 +28,38 @@ const useMapViewController = () => {
     []
   );
 
+  const statusSubtitles = [
+    {
+      icon: "./marker-running.svg",
+      iconAltText: "Marcador locomotiva em movimento",
+      text: "Em movimento",
+      border: true,
+    },
+    {
+      icon: "./marker-stopped.svg",
+      iconAltText: "Marcador locomotiva parada",
+      text: "Locomotiva\nparada",
+      border: false,
+    },
+    {
+      icon: "./marker-maintenance.svg",
+      iconAltText: "Marcador locomotiva em manutenção",
+      text: "Em\nmanutenção",
+      border: false,
+    },
+    {
+      icon: "./marker-problem.svg",
+      iconAltText: "Marcador locomotiva com problema de equipagem",
+      text: "Problema\nde equipagem",
+      border: false,
+    },
+  ];
+
   const handleClickOnLocomotiveMarker = (
     locomotive: LocomotiveRoutePositionDTO
   ) => {
     const locomotiva = globalState.locomotivesData?.find(
-      (locomotiva) => locomotiva.id === locomotive.id
+      (locomotiveToFind) => locomotiveToFind.id === locomotive.id
     );
     setModalDetails({
       isOpen: true,
@@ -50,20 +69,20 @@ const useMapViewController = () => {
     });
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setModalDetails({
       isOpen: !modalDetails.isOpen,
       locomotive_id: modalDetails.locomotive_id,
       locomotive: modalDetails.locomotive,
       locomotive_route: modalDetails.locomotive_route,
     });
-  };
+  }, [modalDetails]);
 
   return {
-    isLoaded,
     modalDetails,
     globalState,
     center,
+    statusSubtitles,
     handleClickOnLocomotiveMarker,
     handleCloseModal,
   };

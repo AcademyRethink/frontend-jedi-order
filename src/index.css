@@ -75,6 +75,12 @@ h4 {
   font-family: "Roboto", sans-serif;
 }
 
+@media (max-height: 800px) {
+  * {
+    font-size: 8.5px;
+  }
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
