@@ -1,31 +1,30 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Routes, Route } from "react-router-dom";
 import Mapa from "../screens/Map/MapView";
 import CenterPanel from "../screens/CenterPanel/CenterPanel";
 import LoginView from "../screens/LoginView/LoginView";
 
+const AuthenticatedRoutes = () => (
+  <Routes>
+    <Route path="/painel-central" element={<CenterPanel />} />
+    <Route path="/mapa" element={<Mapa />} />
+    {/* <Route path="/analise" element={<Analysis/>}/> */}
+    {/* <Route path="/minha-conta" element={<MyAccount/>}/> */}
+  </Routes>
+);
+
+const NonAuthenticatedRoutes = () => (
+  <Routes>
+    <Route path="/login" element={<LoginView />} />
+  </Routes>
+);
+
 export const router = createBrowserRouter([
   {
-    path: "/user/login",
-    element: <LoginView />,
+    path: "/auth/*",
+    element: <NonAuthenticatedRoutes />,
   },
   {
-    path: "/center-panel",
-    element: <CenterPanel />,
+    path: "/*",
+    element: <AuthenticatedRoutes />,
   },
-  {
-    path: "/map",
-    element: <Mapa />,
-  },
-  // {
-  //   path: "/analysis",
-  //   element: <Analysis />,
-  // },
-  // {
-  //   path: "/contact",
-  //   element: <Contact />,
-  // },
-  // {
-  //   path: "/my-account",
-  //   element: <MyAccount />,
-  // },
 ]);

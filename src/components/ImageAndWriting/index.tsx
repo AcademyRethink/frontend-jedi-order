@@ -4,20 +4,25 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
+type ImageAndWritingProps = {
+  icon: "train" | "person" | "location" | "error";
+  label: string;
+  color?: "primary" | "secundary" | "tertiary";
+  fontSize?: string;
+};
+
 const ImageAndWriting = ({
   icon,
   label,
   color = "primary",
-}: {
-  icon: "train" | "person" | "location" | "error";
-  label: string;
-  color?: "primary" | "secundary" | "tertiary";
-}) => {
+  fontSize = "2.4rem",
+}: ImageAndWritingProps) => {
   const colorLibrary = {
     primary: "#9A4D23",
     secundary: "#FFF7F2",
     tertiary: "#232323",
   };
+
   const IconsLibrary = {
     train: (
       <TrainIcon
@@ -44,10 +49,16 @@ const ImageAndWriting = ({
       />
     ),
   };
+
   return (
-    <div className={`imageAndWriting`}>
+    <div className="imageAndWriting">
       {IconsLibrary[icon]}
-      <label className={`imageAndWriting-${color}`}>{label}</label>
+      <label
+        className={`imageAndWriting-${color}`}
+        style={{ fontSize: fontSize }}
+      >
+        {label}
+      </label>
     </div>
   );
 };

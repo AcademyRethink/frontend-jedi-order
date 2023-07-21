@@ -3,3 +3,21 @@
   display: flex;
   height: 100vh;
 }
+
+.overview-info {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.admLocomotives {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.map-overview-container {
+  width: 50%;
+}

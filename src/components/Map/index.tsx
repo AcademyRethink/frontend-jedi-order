@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import "./styles.css";
 import { LocomotiveRoutePositionDTO } from "../../types/locomotives";
 import Marker from "../Marker";
+import LoadingComponent from "../Loading";
 
 type MapProps = {
   center: {
@@ -19,16 +20,11 @@ const Map = ({ center, locomotivesRouteDetails, onMarkerClick }: MapProps) => {
     googleMapsApiKey: process.env.GOOGLE_API_KEY!,
   });
 
-  if (!isLoaded || !locomotivesRouteDetails)
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-      </div>
-    );
+  if (!isLoaded || !locomotivesRouteDetails) return <LoadingComponent />;
 
   return (
     <GoogleMap
-      zoom={10}
+      zoom={6}
       center={mapCenterPoint}
       mapContainerClassName="map-container"
     >
