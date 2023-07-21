@@ -1,0 +1,217 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px, 20px, 0px, 20px;
+  border-radius: 8px;
+ 
+  width: 592px;
+}
+.first-line {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffece5;
+}
+
+.master-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 592px;
+  background-color: #FFEFE5;
+}
+
+  
+.form-container label,
+.form-container select {
+  display: flex;
+  gap: 5px; /* Espaçamento entre as opções de seleção */
+}
+
+
+  .form-container label {
+    display: flex;
+    margin-bottom: 10px;
+    color: var(--secondary-04);
+    font-size: var(--plain-text-regular);
+    flex-direction: column;
+    color: var(--secundria-03, #26211E);
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: 100%; /* 12px */
+margin-bottom: 10px;
+  }
+  
+  .chart-title {
+    display: flex;
+    padding: 0;
+    font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: 100%; /* 12px */
+background-color: #FFEFE5;
+    
+  }
+  .form-container input {
+    height: 48px;
+    width: 184px;
+flex-shrink: 0;
+align-self: stretch;
+align-items: center;
+border-radius: 8px;
+border: 1px solid #461901;
+background: #FFF7F2;
+color: var(--primary-01, #321100);
+display: flex;
+
+font-family: Roboto;
+align-items: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */  }
+
+
+  .form-container select {
+display: flex;
+width: 256px;
+height: 48px;
+
+color: var(--primary-01, #321100);
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+border-radius: 8px;
+border: 1px solid var(--primria-02, #461901);
+background: var(--secondary-301, #f4f2ff);
+  }
+
+  .failure-select-container {
+    width: 592px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+  .failure-select-container select {
+    display: flex;
+    align-content: center;
+    height: 48px;
+    width: 256px;
+    border-radius: 8px;
+    border: 1px solid #461901;
+    background: #FFF7F2;
+    color: var(--primary-01, #321100);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    text-justify: auto;
+    text-align-last: center;
+    
+  }
+  .failure-select-container label {
+
+    margin-bottom: 0; /* Removendo o espaçamento inferior */
+  }
+  
+  
+.second-line {
+
+display: flex;
+align-self: flex-end;
+background-color: #FFF7F2;
+}
+  
+.input-container select {
+  height: 48px;
+  width: 184px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid #461901;
+  background: #fff7f2;
+  color: var(--primary-01, #321100);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+}
+
+  .form-container button {
+    display: flex;
+    width: 160px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 9px;
+  border-radius: 8px;
+  background: var(--primary-02, #461901);
+  color: var(--secondary-301, #fff7f2);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+    align-self: flex-end; 
+
+}
+.form-container .failure-select-container {
+  display: flex;
+  flex-direction: column; /* Fazendo o "select" ocupar toda a largura */
+}
+
+
+  
+  .form-container button:hover {
+    background-color: var(--highlight-01);
+  }
+
+  .chart-container {
+    width: 592px;
+    height: 336px;
+    flex-shrink: 0;
+    border-radius: 8px;
+background: #FFF7F2;
+padding: 5px;
+  }
+  
+  .chart-container p {
+    text-align: center;
+    color: var(--secondary-04);
+    font-size: var(--plain-text-medium);
+  }
+  
+  .chart {
+    margin-top: 20px;
+  }
+
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container input {
+    padding-right: 36px; /* Espaço para o ícone */
+    padding-left: 24px;
+  }
+  
+  .input-container .material-icons {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #602809;
+    pointer-events: none; 
+  }
+  
+  
