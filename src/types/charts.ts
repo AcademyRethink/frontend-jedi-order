@@ -14,6 +14,11 @@ export interface FailureData {
   failure_type: string;
   count: number;
 }
+export interface FailureDataMonth {
+  month: string;
+  failure_type: string;
+  count: number;
+}
 
 export interface FailureType {
   id: number;
@@ -27,4 +32,16 @@ export interface ChartBarProps {
 export interface DataChart {
   locomotive: string;
   count: number;
+}
+export interface ChartData {
+  labels: string[];
+  datasets: ChartDataset[];
+}
+
+export interface ChartDataset {
+  label: string;
+  data: number[];
+  backgroundColor: any;
+  borderColor: string;
+  borderWidth: number;
 }
