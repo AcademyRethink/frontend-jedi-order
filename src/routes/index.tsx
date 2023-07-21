@@ -2,6 +2,8 @@ import { createBrowserRouter, Routes, Route } from "react-router-dom";
 import Mapa from "../screens/Map/MapView";
 import CenterPanel from "../screens/CenterPanel/CenterPanel";
 import LoginView from "../screens/LoginView/LoginView";
+import MyAccountView from "../screens/MyAccountView/MyAccountView";
+import ChangePasswordView from "../screens/ChangePassword/ChangePasswordView";
 
 const AuthenticatedRoutes = () => (
   <Routes>

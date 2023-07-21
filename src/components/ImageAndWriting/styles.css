@@ -3,6 +3,7 @@
   font-style: normal;
   display: flex;
   align-items: center;
+  gap: 0.8rem;
 }
 
 .imageAndWriting-secundary {

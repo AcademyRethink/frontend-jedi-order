@@ -10,7 +10,7 @@ const useLoginViewController = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      navigate('/');
+      navigate('/center-panel');
     }
   }, [navigate]);
   
@@ -18,10 +18,10 @@ const useLoginViewController = () => {
     if (user.email !== '' && user.password !== '') {
       verifyUser(user)
         .then((resp) => {
-          navigate('/');
+          navigate('/center-panel');
         })
         .catch((error) => {
-          setErrorMessage( error.response.data.message)
+          setErrorMessage(error.message)
         });
     }
   }, [user, navigate]);

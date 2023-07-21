@@ -1,0 +1,16 @@
+.containerInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.title{
+    font: var(--legend-text-bold);
+    color: #000;
+}
+
+.info{
+    font: var(--plain-text-regular);
+    color: #000;
+}
