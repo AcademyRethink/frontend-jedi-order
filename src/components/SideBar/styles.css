@@ -19,16 +19,15 @@
 .menuContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 7rem;
-}
-
-.menuButton {
-  width: 6.4rem;
-  height: 4rem;
+  width: 100%;
+  gap: 4rem;
+  justify-content: center;
 }
 
 .myAcountButton {
+  background: none;
+  border: none;
+  cursor: pointer;
   height: 9.6rem;
   width: 100%;
   border: 1px solid #883b11;
