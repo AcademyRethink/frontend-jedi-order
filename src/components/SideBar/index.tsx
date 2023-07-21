@@ -1,6 +1,5 @@
 import { memo } from "react";
 import Menu from "../Menu";
-import Skeletons from "../Skeleton";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import "./styles.css";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";

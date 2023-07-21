@@ -1,6 +1,5 @@
-import { GoogleMap } from "@react-google-maps/api";
 import "./styles.css";
-import Marker from "../../components/Marker";
+import Map from "../../components/Map";
 import SideBar from "../../components/SideBar";
 import LocomotiveModal from "../../components/LocomotiveModal";
 import useMapViewController from "./MapViewController";
@@ -9,19 +8,13 @@ import LocomotiveStatusSubtitle from "../../components/LocomotiveStatusSubtitle"
 const Mapa = () => {
   const {
     center,
+    statusSubtitles,
     globalState,
     handleClickOnLocomotiveMarker,
     handleCloseModal,
-    isLoaded,
     modalDetails,
   } = useMapViewController();
 
-  if (!isLoaded || !globalState.locomotivesRouteDetails)
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-      </div>
-    );
   return (
     <div className="map-view-screen">
       <SideBar />
@@ -39,60 +32,25 @@ const Mapa = () => {
           )}
         </div>
 
-        <GoogleMap
-          zoom={10}
+        <Map
           center={center}
-          mapContainerClassName="map-container"
-        >
-          {globalState.locomotivesRouteDetails &&
-            globalState.locomotivesRouteDetails.map((locomotive) => {
+          locomotivesRouteDetails={globalState.locomotivesRouteDetails}
+          onMarkerClick={handleClickOnLocomotiveMarker}
+        />
+
+        <div className="locomotive-status-subtitle">
+          {statusSubtitles &&
+            statusSubtitles.map((statusSubtitle, index) => {
               return (
-                <Marker
-                  key={locomotive.id}
-                  locomotive={locomotive}
-                  onClick={() => handleClickOnLocomotiveMarker(locomotive)}
+                <LocomotiveStatusSubtitle
+                  key={index}
+                  icon={statusSubtitle.icon}
+                  border={statusSubtitle.border}
+                  iconAltText={statusSubtitle.iconAltText}
+                  text={statusSubtitle.text}
                 />
               );
             })}
-        </GoogleMap>
-        <div className="locomotive-status-subtitle">
-          <LocomotiveStatusSubtitle
-            icon="./marker-running.svg"
-            border
-            iconAltText="Marcador locomotiva em movimento"
-            text={
-              <>
-                Em <br /> movimento
-              </>
-            }
-          />
-          <LocomotiveStatusSubtitle
-            icon="./marker-stopped.svg"
-            iconAltText="Marcador locomotiva parada"
-            text={
-              <>
-                Locomotiva <br /> parada
-              </>
-            }
-          />
-          <LocomotiveStatusSubtitle
-            icon="./marker-maintenance.svg"
-            iconAltText="Marcador locomotiva em manutenção"
-            text={
-              <>
-                Em <br /> manutenção
-              </>
-            }
-          />
-          <LocomotiveStatusSubtitle
-            icon="./marker-problem.svg"
-            iconAltText="Marcador locomotiva com problema de equipagem"
-            text={
-              <>
-                Problema de <br /> equipagem
-              </>
-            }
-          />
         </div>
       </div>
     </div>

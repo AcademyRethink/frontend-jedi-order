@@ -1,17 +1,11 @@
-import { useLoadScript } from "@react-google-maps/api";
 import { useCallback, useMemo, useState } from "react";
 import {
   LocomotiveDTO,
   LocomotiveRoutePositionDTO,
 } from "../../types/locomotives";
 import { useGlobalContext } from "../../context/GlobalContext";
-import { useLocomotivesPosition } from "../../hooks/useLocomotivesPosition";
 
 const useMapViewController = () => {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_API_KEY!,
-  });
-
   const [modalDetails, setModalDetails] = useState<{
     isOpen: boolean;
     locomotive_id: number;
@@ -26,8 +20,6 @@ const useMapViewController = () => {
 
   const { globalState } = useGlobalContext();
 
-  useLocomotivesPosition();
-
   const center = useMemo(
     () => ({
       lat: -19.83282,
@@ -35,6 +27,33 @@ const useMapViewController = () => {
     }),
     []
   );
+
+  const statusSubtitles = [
+    {
+      icon: "./marker-running.svg",
+      iconAltText: "Marcador locomotiva em movimento",
+      text: "Em movimento",
+      border: true,
+    },
+    {
+      icon: "./marker-stopped.svg",
+      iconAltText: "Marcador locomotiva parada",
+      text: "Locomotiva\nparada",
+      border: false,
+    },
+    {
+      icon: "./marker-maintenance.svg",
+      iconAltText: "Marcador locomotiva em manutenção",
+      text: "Em\nmanutenção",
+      border: false,
+    },
+    {
+      icon: "./marker-problem.svg",
+      iconAltText: "Marcador locomotiva com problema de equipagem",
+      text: "Problema\nde equipagem",
+      border: false,
+    },
+  ];
 
   const handleClickOnLocomotiveMarker = (
     locomotive: LocomotiveRoutePositionDTO
@@ -60,10 +79,10 @@ const useMapViewController = () => {
   }, [modalDetails]);
 
   return {
-    isLoaded,
     modalDetails,
     globalState,
     center,
+    statusSubtitles,
     handleClickOnLocomotiveMarker,
     handleCloseModal,
   };

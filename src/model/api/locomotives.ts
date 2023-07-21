@@ -48,7 +48,7 @@ const fetchLocomotivesPosition = async (): Promise<
   return response;
 };
 
-const fetchLocomotivesData = {
+const locomotiveAPI = {
   fetchAllLocomotives,
   fetchFilteredLocomotives,
   fetchLocomotivesOverview,
@@ -56,4 +56,4 @@ const fetchLocomotivesData = {
   fetchLocomotivesPosition,
 };
 
-export default fetchLocomotivesData;
+export default locomotiveAPI;

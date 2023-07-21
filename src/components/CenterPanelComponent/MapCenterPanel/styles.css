@@ -1,8 +1,7 @@
-.map {
-  background-color: green;
+.center-panel-map-container {
   height: 95.9rem;
   width: 51.8rem;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   margin-left: 1.6rem;
   margin-top: 2.7rem;
 }
