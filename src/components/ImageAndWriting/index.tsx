@@ -3,10 +3,10 @@ import TrainIcon from "@mui/icons-material/Train";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 type ImageAndWritingProps = {
-  icon: "train" | "person" | "location" | "error";
+  icon: "train" | "person" | "location" | "error" | "check_circle";
   label: string;
   color?: "primary" | "secundary" | "tertiary";
   fontSize?: string;
@@ -18,7 +18,6 @@ const ImageAndWriting = ({
   color = "primary",
   fontSize = "2.4rem",
 }: ImageAndWritingProps) => {
-
   const colorLibrary = {
     primary: "#9A4D23",
     secundary: "#FFF7F2",
