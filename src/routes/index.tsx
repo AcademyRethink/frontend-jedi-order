@@ -3,6 +3,7 @@ import Mapa from "../screens/Map/MapView";
 import CenterPanel from "../screens/CenterPanel/CenterPanel";
 import LoginView from "../screens/LoginView/LoginView";
 import MyAccountView from "../screens/MyAccountView/MyAccountView";
+import ChangePasswordView from "../screens/ChangePassword/ChangePasswordView";
 
 export const router = createBrowserRouter([
   {
@@ -32,5 +33,9 @@ export const router = createBrowserRouter([
   {
     path: "/map",
     element: <Mapa />,
+  },
+  {
+    path: "/alterarSenha/:id",
+    element: <ChangePasswordView />,
   },
 ]);

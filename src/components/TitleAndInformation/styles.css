@@ -1,4 +1,4 @@
-.infoAccount {
+.titleAndInfo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -7,7 +7,7 @@
     
 }
 
-.infoAccount p{
+.titleAndInfo p{
     font: var(--plain-text-regular);
     font-size: 1.2rem;
 }

@@ -1,0 +1,77 @@
+.containerChangePassword{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+    background-color: var(--secondary-301);
+}
+
+.changePasswordView{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5.6rem;
+
+    padding: 12.8rem 74.8rem 87.2rem 15.2rem; /* superior | direita | inferior | esquerda*/
+}
+
+.throwback{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.throwback a{
+    font: var(--plain-text-regular);
+    color: #000;
+    text-decoration: none;
+}
+
+.throwback i svg{
+    font-size: 2.4rem;
+}
+
+.changePassword{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5.6rem;
+}
+.changePasswordTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.changePasswordTitle p{
+    font: var(--plain-text-regular);
+}
+
+.changePasswordInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.4rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+}
+
+.buttons button{
+    display: flex;
+    width: 16rem;
+    padding: 1.2rem 1.6rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+
+    border-radius: 0.8rem;
+    background: var(--primary-02);
+    color: var(--secondary-301);
+}

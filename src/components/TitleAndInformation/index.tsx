@@ -3,9 +3,9 @@ import './styles.css'
 
 const TitleAndInformation = ({title, info}: titleAndInfo) => {
   return (
-    <div className="infoAccount">
+    <div className="titleAndInfo">
         <h4>{title}</h4>
-        <p>{info}</p>
+        <p className="customInfo">{info}</p>
     </div>
   )
 }

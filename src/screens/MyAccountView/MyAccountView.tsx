@@ -2,9 +2,19 @@ import './styles.css'
 import SideBar from '../../components/SideBar'
 import Line from '../../components/Line'
 import InfoMyAccount from '../../components/InfoMyAccount/Index'
-import ButtonLogout from '../../components/ButtonLogout'
+import Button from '../../components/Button'
+import LogoutIcon from '@mui/icons-material/Logout';
+import { useNavigate  } from 'react-router-dom';
 
 const MyAccountView = () => {
+  const icon = <LogoutIcon/>;
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    navigate('/usuario/login');
+  }
   return (
    <div className='myAccountView'>
         <SideBar/>
@@ -15,9 +25,8 @@ const MyAccountView = () => {
             </div>
             <Line/>
             <InfoMyAccount/>
-            <ButtonLogout/>
+            <Button icon={icon} text='Sair da conta' onClick={handleLogout}/>
         </div>
-        
    </div>
   )
 }

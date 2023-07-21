@@ -48,6 +48,6 @@
 
 .passwordCamp a{
     text-decoration-line: underline;
-    font: var(----legend-text);
+    font: var(--legend-text-bold);
     color: #000;
 }
