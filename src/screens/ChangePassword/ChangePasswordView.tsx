@@ -3,22 +3,40 @@ import SideBar from '../../components/SideBar';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import useChangePassword from './useChangePassword';
+
 
 const ChangePasswordView = () => {
-  return (
+    const { handleSubmit, closeModal, errorMessage, isModalOpen, cancelSolicitation} = useChangePassword();
+
+return (
     <div className='containerChangePassword'>
         <SideBar/>
         <div className="changePasswordView">
+        {isModalOpen && <div className="modalOverlay"></div>} 
+        {isModalOpen &&
+            <Modal 
+            label='Senha alterada com sucesso.'
+            text='Fechar'
+            fontSize='2.4rem' 
+            showTwoButtons={false} 
+            background='#461901'  
+            color='#FFF7F2'
+            paragraph='Você receberá uma notificação por e-mail sobre a sua redefinição.'
+            onClick={closeModal}
+            />
+        }
             <div className="throwback">
                 <i><ArrowBackIosIcon/></i>
-                <a href="/minhaConta">Voltar</a>
+                <a href="/minha-conta">Voltar</a>
             </div>
             <div className="changePassword">
                 <div className="changePasswordTitle">
                     <h1>Altere a senha</h1>
                     <p>Deixe sua conta mais segura através de uma senha única.</p>
                 </div>
-                <div className="changePasswordInput">
+                <form className="changePasswordInput" onSubmit={handleSubmit}>
                     <Input
                         type='password'
                         name='actualPassword' 
@@ -43,11 +61,13 @@ const ChangePasswordView = () => {
                         required
                         tabIndex={0}
                     />
-                    <div className="buttons">
+                    {errorMessage && <p className="error">{errorMessage}</p>}
+
+                    <div className="change-password-buttons">
                         <Button text='Salvar' background='#461901'/>
-                        <Button text='Cancelar' background='transparent' color='#602809'/>
+                        <Button text='Cancelar' background='transparent' color='#602809' onClick={cancelSolicitation}/>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

@@ -10,7 +10,9 @@ const AuthenticatedRoutes = () => (
     <Route path="/painel-central" element={<CenterPanel />} />
     <Route path="/mapa" element={<Mapa />} />
     {/* <Route path="/analise" element={<Analysis/>}/> */}
-    {/* <Route path="/minha-conta" element={<MyAccount/>}/> */}
+    <Route path="/minha-conta" element={<MyAccountView/>}/> 
+    <Route path="/alterar-senha/:id" element={<ChangePasswordView/>}/> 
+
   </Routes>
 );
 

@@ -6,6 +6,8 @@
 }
 
 .containerMyAccount{
+    margin-left: 12.8rem;
+
     display:flex;
     flex-direction: column;
     align-items: flex-start;
