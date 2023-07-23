@@ -5,35 +5,45 @@ import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import MenuButton from "../MenuButton";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SideBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClickOnProfileButton = () => {
     navigate("/minha-conta");
   };
+
+  const menuButtons = [
+    {
+      icon: DashboardOutlinedIcon,
+      label: "Painel central",
+      redirectTo: "/painel-central",
+    },
+    { icon: FmdGoodOutlinedIcon, label: "Mapa", redirectTo: "/mapa" },
+    {
+      icon: TrendingUpOutlinedIcon,
+      label: "Análises",
+      redirectTo: "/analises",
+    },
+  ];
+
   return (
     <div className="sideBarContainer">
       <div className="side-bar-logo-image">
         <img src={"/TecnoviaLogo.svg"} alt="logo: Tecnovia" />
       </div>
       <div className="menuContainer">
-        <MenuButton
-          icon={DashboardOutlinedIcon}
-          label="Painel central"
-          redirectTo="/painel-central"
-        />
-        <MenuButton
-          icon={FmdGoodOutlinedIcon}
-          label="Mapa"
-          redirectTo="/mapa"
-        />
-        <MenuButton
-          icon={TrendingUpOutlinedIcon}
-          label="Análises"
-          redirectTo="/mapa"
-        />
+        {menuButtons.map((button, index) => (
+          <MenuButton
+            key={index}
+            icon={button.icon}
+            label={button.label}
+            redirectTo={button.redirectTo}
+            isActive={location.pathname === button.redirectTo}
+          />
+        ))}
       </div>
       <button
         className="myAcountButton"

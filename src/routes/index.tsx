@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Mapa from "../screens/Map/MapView";
-import CenterPanel from "../screens/CenterPanel/CenterPanel";
+import Mapa from "../screens/MapView/MapView";
+import CenterPanel from "../screens/CenterPanelView/CenterPanelView";
 import LoginView from "../screens/LoginView/LoginView";
 import MyAccountView from "../screens/MyAccountView/MyAccountView";
 import ChangePasswordView from "../screens/ChangePassword/ChangePasswordView";
