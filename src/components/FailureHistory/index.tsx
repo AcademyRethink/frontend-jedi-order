@@ -1,15 +1,12 @@
-import { useEffect } from "react";
-import useReportsViewModel from "../../viewmodel/useReportsViewModel";
+import { ReportType } from "../../types/reports";
 import ImageAndWriting from "../ImageAndWriting";
 import "./styles.css";
 
-const FailureHistory = () => {
-  const { getLastFourReports, reports } = useReportsViewModel();
+type FailureHistoryProps = {
+  reports: ReportType[];
+};
 
-  useEffect(() => {
-    getLastFourReports();
-  }, []);
-
+const FailureHistory = ({ reports }: FailureHistoryProps) => {
   return (
     <div className="failureHistory">
       <div className="text">
