@@ -2,16 +2,12 @@ import { LocomotiveOverviewDTO } from "../../types/locomotives";
 import "./styles.css";
 
 type AdministrativeLocomotiveProps = {
-  locomotiveOverviewData: LocomotiveOverviewDTO | undefined;
+  locomotiveOverviewData: LocomotiveOverviewDTO;
 };
 
 const AdministrativeLocomotive = ({
   locomotiveOverviewData,
 }: AdministrativeLocomotiveProps) => {
-  if (!locomotiveOverviewData) {
-    return null;
-  }
-
   return (
     <div className="administrativeLocomotive">
       <div className="text">

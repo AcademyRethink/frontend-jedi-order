@@ -22,3 +22,9 @@
 .map-overview-container {
   width: 50%;
 }
+
+.center-panel-map-container {
+  height: 100%;
+  width: 100%;
+  padding: 3rem 13rem;
+}
