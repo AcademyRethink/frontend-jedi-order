@@ -1,14 +1,13 @@
-.containerLogin{
+.containerLogin {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   background-color: var(--secondary-301);
 }
 
-.loginCard{
-  width: 48.8rem;
-  height: 57.2rem;
+.loginCard {
   border-radius: 0.8rem;
   border: 0.1rem solid rgba(255, 238, 229, 0.15);
   background: var(--secondary-302);
@@ -16,20 +15,17 @@
   padding: 2rem;
 }
 
-.loginForm{
+.loginForm {
   display: flex;
-  width: 44rem;
-  height: 52.4rem;
   padding: 3.2rem;
   flex-direction: column;
   justify-content: center;
   gap: 4rem;
-
   border-radius: 0.8rem;
   background: var(--secondary-301);
 }
 
-.loginForm h1{
+.loginForm h1 {
   font: var(--font-h2);
   font-size: var(--size-medium);
   color: var(--primary-01);
@@ -38,60 +34,68 @@
 }
 
 .loginForm h3 {
-  width: 38.4rem;
   color: var(--primary-02);
   font: var(--font-h3);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
 }
 
-.btn-Login{
-  display: flex;
-  width: 38.4rem;
-  height: 4.8rem;
+.btn-Login {
   padding: 1.6rem 11.9rem;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
   cursor: pointer;
-  
   border-radius: 0.8rem;
-  background-color:var(--primary-02);
+  background-color: var(--primary-02);
   color: var(--secondary-301);
-  font:var(--plain-text-bold);
+  font: var(--plain-text-bold);
 }
 
-.button {
+.login-button-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.button a {
-  color:var(--secondary-02);
+.login-button-container a {
+  color: var(--secondary-02);
   font: var(--plain-text-regular);
 }
 
-.emailInput{
+.emailInput {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.emailInput p{
+.emailInput p {
   font: var(--legend-text);
   color: var(--primary-02);
 }
 
-.inputsLogin{
+.inputsLogin {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  width: 38.4rem;
 }
 
-.error{
+.error {
   font: var(--legend-text-bold);
   color: red;
+}
+
+@media (max-width: 500px) {
+  .loginCard {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 2rem;
+  }
+
+  .loginForm {
+    width: 100%;
+  }
+
+  .inputsLogin {
+    width: 100%;
+  }
 }

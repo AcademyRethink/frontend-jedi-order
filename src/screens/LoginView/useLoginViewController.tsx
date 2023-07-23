@@ -5,10 +5,12 @@ import useLoginViewModel from "../../viewmodel/useLoginViewModel";
 const useLoginViewController = () => {
   const navigate = useNavigate();
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setisLoading] = useState<boolean>(false);
 
   const { authenticateUser } = useLoginViewModel();
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    setisLoading(true);
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
@@ -16,6 +18,7 @@ const useLoginViewController = () => {
     const password = formData.get("senha") as string;
     authenticateUser({ email, password })
       .then(() => {
+        setisLoading(false);
         navigate("/painel-central");
       })
       .catch((error) => setError(error.message));
@@ -24,6 +27,7 @@ const useLoginViewController = () => {
   return {
     handleSubmit,
     error,
+    isLoading,
   };
 };
 

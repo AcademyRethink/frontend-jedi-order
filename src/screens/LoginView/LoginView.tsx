@@ -1,9 +1,12 @@
 import "./styles.css";
 import Input from "../../components/Input";
 import useLoginViewController from "./useLoginViewController";
+import LoadingComponent from "../../components/Loading";
 
 const LoginView = () => {
-  const { handleSubmit, error } = useLoginViewController();
+  const { isLoading, error, handleSubmit } = useLoginViewController();
+
+  if (isLoading) return <LoadingComponent />;
 
   return (
     <div className="containerLogin">
@@ -33,7 +36,7 @@ const LoginView = () => {
             />
           </div>
           {error && <p className="error">{error}</p>}
-          <div className="button">
+          <div className="login-button-container">
             <button className="btn-Login" type="submit" tabIndex={0}>
               Entrar
             </button>
