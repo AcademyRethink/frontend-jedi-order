@@ -8,7 +8,7 @@ import SideBar from "../components/SideBar";
 import "./styles.css";
 
 const AuthenticatedRoutes = () => (
-  <div>
+  <div className="default-app-screen">
     <SideBar />
     <div className="default-screen-container">
       <Routes>
