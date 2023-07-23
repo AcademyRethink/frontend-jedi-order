@@ -1,0 +1,40 @@
+.analysis-screen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.analysis-content {
+  background-color: purple;
+  flex: 1;
+  margin-left: 12.8rem;
+}
+
+.export-report {
+  height: 9.6rem;
+  background-color: aqua;
+  margin-top: 4.8rem;
+  margin-bottom: 6.4rem;
+  flex: 1;
+}
+
+.comparison-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 80.3rem;
+  gap: 3.2rem;
+  background-color: orange;
+}
+
+.weekly-comparison {
+  width: 59.2rem;
+  height: 80.3rem;
+  background-color: red;
+}
+
+.monthly-comparison {
+  width: 59.2rem;
+  height: 80.3rem;
+  background-color: blue;
+}
