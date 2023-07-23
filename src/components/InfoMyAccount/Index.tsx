@@ -7,19 +7,7 @@ import {useEffect,useState} from 'react'
 import { getUserById } from '../../model/api/myAccount'
 import { User } from "../../types/user";
 
-const InfoMyAccount = () => {
-    const [userId, setUserId] = useState('');
-    const [user, setUser] = useState<User>({name: "", email: "", permission: false, active:true, password: "" })
-
-    useEffect(() => {
-        const id = localStorage.getItem("id");
-        setUserId(id ?? '');
-        getUserById(id)
-        .then((resp) => {
-          setUser(resp);
-      })
-    }, [user]);
-
+const InfoMyAccount = ({userConnected, userId}:{ userConnected: User; userId:string}) => {
   return (
     <div className='containerMyAccountInfo'>
       <div className="myAccountInfo">
@@ -28,12 +16,12 @@ const InfoMyAccount = () => {
             info='Dados gerais sobre a conta. Para realizar mais alterações, procure a gerência.'
             />
             <div className="containerInfoUser">
-                <InfoUser title='Nome' info={user.name}/>
+                <InfoUser title='Nome' info={userConnected.name}/>
                 <InfoUser title='Cargo' info='Controlador'/>
-                <InfoUser title='E-mail' info={user.email}/>
+                <InfoUser title='E-mail' info={userConnected.email}/>
                 <div className="passwordCamp">
                     <InfoUser title='Senha' info='********'/>
-                    <a href={`/alterarSenha/${userId}`}>Alterar Senha</a>
+                    <a href={`/alterar-senha/${userId}`}>Alterar Senha</a>
                 </div>
             </div>
         </div>
@@ -49,10 +37,10 @@ const InfoMyAccount = () => {
                 <div className="infoPlan">
                     <div className="statusPlan">
                     <p>Situação Atual</p>
-                    {user.active ? (
-                        <ImageAndWriting icon='check_circle' label='Conta ativada' color='tertiary'/>
+                    {userConnected.active ? (
+                        <ImageAndWriting icon='check_circle' label='Conta ativada' color='tertiary' fontSize='1.6rem'/>
                     ):
-                    (<ImageAndWriting icon='check_circle' label='Conta desativada' color='tertiary'/>)} 
+                    (<ImageAndWriting icon='check_circle' label='Conta desativada' color='tertiary' fontSize='1.6rem'/>)} 
                     </div>
                 </div>
                 
