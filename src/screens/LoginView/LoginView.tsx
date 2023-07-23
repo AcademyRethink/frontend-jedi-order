@@ -3,7 +3,7 @@ import Input from "../../components/Input";
 import useLoginViewController from "./useLoginViewController";
 
 const LoginView = () => {
-  const { handleSubmit, errorMessage } = useLoginViewController()
+  const { handleSubmit, error } = useLoginViewController();
 
   return (
     <div className="containerLogin">
@@ -16,7 +16,7 @@ const LoginView = () => {
               <Input
                 name="email"
                 placeholder="Digite o seu e-mail"
-                type= "email"
+                type="email"
                 label="Email"
                 required
                 tabIndex={0}
@@ -32,10 +32,14 @@ const LoginView = () => {
               tabIndex={0}
             />
           </div>
-          {errorMessage && <p className="error">{errorMessage}</p>}
+          {error && <p className="error">{error}</p>}
           <div className="button">
-            <button className="btn-Login" type="submit" tabIndex={0}>Entrar</button>
-            <a href="" tabIndex={0}>Precisa de Ajuda?</a>
+            <button className="btn-Login" type="submit" tabIndex={0}>
+              Entrar
+            </button>
+            <a href="" tabIndex={0}>
+              Precisa de Ajuda?
+            </a>
           </div>
         </form>
       </div>
