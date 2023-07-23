@@ -1,15 +1,12 @@
-import "./styles.css";
+import { ReportType } from "../../types/reports";
 import ImageAndWriting from "../ImageAndWriting";
-import useReportsViewModel from "../../viewmodel/useReportsViewModel";
-import { useEffect } from "react";
+import "./styles.css";
 
-const FailureHistory = () => {
-  const { getLastFourReports, reports } = useReportsViewModel();
+type FailureHistoryProps = {
+  reports: ReportType[];
+};
 
-  useEffect(() => {
-    getLastFourReports();
-  }, []);
-
+const FailureHistory = ({ reports }: FailureHistoryProps) => {
   return (
     <div className="failureHistory">
       <div className="text">
@@ -19,7 +16,7 @@ const FailureHistory = () => {
       <div className="reports-container">
         {reports.length > 0 &&
           reports.map((report) => (
-            <div className="StatusOflocomotive">
+            <div className="StatusOflocomotive" key={report.id}>
               <div className="title">
                 <ImageAndWriting
                   icon="error"

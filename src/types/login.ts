@@ -11,3 +11,13 @@ export type LoginRequest = {
   email: string;
   password: string;
 };
+
+export type LoginSuccessful = {
+  id: string;
+  token: string;
+};
+
+export type LoginFailed = {
+  message: "Senha Incorreta";
+  status: 400;
+};

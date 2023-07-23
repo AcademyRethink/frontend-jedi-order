@@ -1,9 +1,12 @@
 import "./styles.css";
 import Input from "../../components/Input";
 import useLoginViewController from "./useLoginViewController";
+import LoadingComponent from "../../components/Loading";
 
 const LoginView = () => {
-  const { handleSubmit, errorMessage } = useLoginViewController()
+  const { isLoading, error, handleSubmit } = useLoginViewController();
+
+  if (isLoading) return <LoadingComponent />;
 
   return (
     <div className="containerLogin">
@@ -16,7 +19,7 @@ const LoginView = () => {
               <Input
                 name="email"
                 placeholder="Digite o seu e-mail"
-                type= "email"
+                type="email"
                 label="Email"
                 required
                 tabIndex={0}
@@ -32,10 +35,14 @@ const LoginView = () => {
               tabIndex={0}
             />
           </div>
-          {errorMessage && <p className="error">{errorMessage}</p>}
-          <div className="button">
-            <button className="btn-Login" type="submit" tabIndex={0}>Entrar</button>
-            <a href="" tabIndex={0}>Precisa de Ajuda?</a>
+          {error && <p className="error">{error}</p>}
+          <div className="login-button-container">
+            <button className="btn-Login" type="submit" tabIndex={0}>
+              Entrar
+            </button>
+            <a href="" tabIndex={0}>
+              Precisa de Ajuda?
+            </a>
           </div>
         </form>
       </div>

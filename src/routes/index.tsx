@@ -1,34 +1,54 @@
-import { createBrowserRouter, Routes, Route } from "react-router-dom";
-import Mapa from "../screens/Map/MapView";
-import CenterPanel from "../screens/CenterPanel/CenterPanel";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Mapa from "../screens/MapView/MapView";
+import CenterPanel from "../screens/CenterPanelView/CenterPanelView";
 import LoginView from "../screens/LoginView/LoginView";
 import MyAccountView from "../screens/MyAccountView/MyAccountView";
 import ChangePasswordView from "../screens/ChangePassword/ChangePasswordView";
 import Analysis from "../screens/Analysis/Analysis";
+import SideBar from "../components/SideBar";
+import "./styles.css";
 
 const AuthenticatedRoutes = () => (
-  <Routes>
-    <Route path="/painel-central" element={<CenterPanel />} />
-    <Route path="/mapa" element={<Mapa />} />
-    <Route path="/analise" element={<Analysis />} />
-    <Route path="/minha-conta" element={<MyAccountView />} />
-    <Route path="/trocar-senha" element={<ChangePasswordView />} />
-  </Routes>
+  <div className="default-app-screen">
+    <SideBar />
+    <div className="default-screen-container">
+      <Routes>
+        <Route path="/painel-central" element={<CenterPanel />} />
+        <Route path="/mapa" element={<Mapa />} />
+        <Route path="/analise" element={<Analysis/>}/>
+        <Route path="/minha-conta" element={<MyAccountView />} />
+        <Route path="/trocar-senha" element={<ChangePasswordView />} />
+        <Route path="/*" element={<Navigate to="/painel-central" />} />
+      </Routes>
+    </div>
+  </div>
+
 );
 
 const NonAuthenticatedRoutes = () => (
   <Routes>
     <Route path="/login" element={<LoginView />} />
+    <Route path="/*" element={<Navigate to="/auth/login" />} />
   </Routes>
 );
 
-export const router = createBrowserRouter([
-  {
-    path: "/auth/*",
-    element: <NonAuthenticatedRoutes />,
-  },
-  {
-    path: "/*",
-    element: <AuthenticatedRoutes />,
-  },
-]);
+export const getRoutes = (isLoggedIn: boolean) => {
+  return [
+    {
+      path: "/auth/*",
+      element: isLoggedIn ? (
+        <Navigate to="/painel-central" />
+      ) : (
+        <NonAuthenticatedRoutes />
+      ),
+    },
+    {
+      path: "/*",
+      element: isLoggedIn ? (
+        <AuthenticatedRoutes />
+      ) : (
+        <Navigate to="/auth/login" />
+      ),
+    },
+  ];
+};
