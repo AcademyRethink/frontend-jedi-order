@@ -1,14 +1,15 @@
 .analysis-screen {
   background-color: var(--secondary-301);
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .analysis-content {
-  background-color: purple;
+  
   flex: 1;
-  margin-left: 6.8rem;
+  margin-left: 3.8rem;
   margin-right: 6.8rem;
+  align-items: flex-start;
 }
 
 .export-report {
@@ -55,10 +56,22 @@
   justify-content: center;
   flex-direction: row;
   height: 80.3rem;
-  gap: 3.2rem;
-  background-color: orange;
+  gap: 3rem;
+ 
 }
 
+.title-comparison {
+  color: var(--secundria-02, #403833);
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+display: flex;
+width: 662px;
+margin-bottom: 28px;
+
+}
 .weekly-comparison {
   width: 59.2rem;
   height: 80.3rem;
@@ -67,11 +80,15 @@
 
 .monthly-comparison {
   width: 66.2rem;
-  height: 70.3rem;
+  height: 80.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #ffefe5;
   flex-direction: column;
   gap: 30px;
+  border-radius: 8px;
+border: 2px solid rgba(255, 238, 229, 0.15);
+background: #FFEFE5;
+box-shadow: 0px 4px 6px 0px rgba(160, 77, 24, 0.15);
 }

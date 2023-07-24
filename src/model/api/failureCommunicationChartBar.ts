@@ -1,65 +1,37 @@
+import api from "./api";
 import {
   FailureType,
   FormValues,
   FailureData,
   FailureDataMonth,
 } from "../../types/charts";
-import translateMonth from "../../utils/translateMonthsNames";
 
-export async function fetchFailureTypes(): Promise<FailureType[]> {
-  try {
-    const response = await fetch("http://localhost:3000/failure-types");
-    if (!response.ok) {
-      throw new Error("Failed to fetch failure types.");
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching failure types:", error);
-    return [];
-  }
-}
+const failureTypesBaseURL = "failure-types/";
+const communicationReportsBaseURL = "communication-reports/";
 
-export async function fetchFailureData(
+export const fetchFailureTypes = async (): Promise<FailureType[]> => {
+  const response: FailureType[] = await api.get(failureTypesBaseURL);
+  console.log(response);
+  return response;
+};
+
+export const fetchFailureData = async (
   formData: FormValues
-): Promise<FailureData[]> {
-  try {
-    if (formData.startDate && formData.endDate && formData.failureType) {
-      const response = await fetch(
-        "http://localhost:3000/communication-reports/countbytimeinterval",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Failed to fetch failure data.");
-      }
-      const data = await response.json();
-      return data;
-    } else {
-      return [];
-    }
-  } catch (error) {
-    console.error("Error fetching failure data:", error);
-    return [];
-  }
-}
+): Promise<FailureData[]> => {
+  const response: FailureData[] = await api.post(
+    communicationReportsBaseURL + "countbytimeinterval",
+    formData
+  );
+  console.log(response);
+  return response;
+};
 
 export const fetchFailureDataCount = async (
   selectedFailureType: number
 ): Promise<FailureDataMonth[]> => {
-  try {
-    const response = await fetch(
-      `http://localhost:3000/communication-reports/filterbysubjectid/${selectedFailureType}`
-    );
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching failure data:", error);
-    return [];
-  }
+  const response: FailureDataMonth[] = await api.get(
+    communicationReportsBaseURL + "filterbysubjectid/" + selectedFailureType
+  );
+  console.log(response);
+  return response;
 };
