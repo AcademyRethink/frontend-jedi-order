@@ -12,7 +12,7 @@ const LoginView = () => {
     <div className="containerLogin">
       <div className="loginCard">
         <form className="loginForm" onSubmit={handleSubmit}>
-          <h1>Tecnovia </h1>
+          <h1>Tecnovia</h1>
           <h3>Olá, acesse a sua conta</h3>
           <div className="inputsLogin">
             <div className="emailInput">
@@ -22,7 +22,7 @@ const LoginView = () => {
                 type="email"
                 label="Email"
                 required
-                tabIndex={0}
+                tabIndex={1}
               />
               <p>Ex: emailexemplo@exemplo.com</p>
             </div>
@@ -32,15 +32,20 @@ const LoginView = () => {
               type="password"
               label="Senha"
               required
-              tabIndex={0}
+              tabIndex={2}
             />
           </div>
           {error && <p className="error">{error}</p>}
           <div className="login-button-container">
-            <button className="btn-Login" type="submit" tabIndex={0}>
+            <button
+              className="btn-Login"
+              type="submit"
+              tabIndex={3}
+              aria-label="Entrar na conta"
+            >
               Entrar
             </button>
-            <a href="" tabIndex={0}>
+            <a href="#" tabIndex={4}>
               Precisa de Ajuda?
             </a>
           </div>

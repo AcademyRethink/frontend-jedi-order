@@ -34,6 +34,7 @@ const Marker = ({ locomotive, onClick }: MarkerProps) => {
             .longitude
         ),
       }}
+      aria-label={`Marcador da locomotiva ${locomotive.id}`}
     />
   );
 };

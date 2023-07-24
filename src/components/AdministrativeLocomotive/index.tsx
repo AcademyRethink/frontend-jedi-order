@@ -9,7 +9,7 @@ const AdministrativeLocomotive = ({
   locomotiveOverviewData,
 }: AdministrativeLocomotiveProps) => {
   return (
-    <div className="administrativeLocomotive">
+    <div className="administrativeLocomotive" tabIndex={0}>
       <div className="text">
         <h1>Painel central</h1>
         <h3>Locomotivas administradas</h3>

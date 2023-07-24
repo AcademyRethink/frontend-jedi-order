@@ -1,6 +1,5 @@
 import "./styles.css";
 import Map from "../../components/Map";
-import SideBar from "../../components/SideBar";
 import LocomotiveModal from "../../components/LocomotiveModal";
 import useMapViewController from "./MapViewController";
 import LocomotiveStatusSubtitle from "../../components/LocomotiveStatusSubtitle";
@@ -17,9 +16,8 @@ const Mapa = () => {
 
   return (
     <div className="map-view-screen">
-      <SideBar />
       <div className="map-screen">
-        <div className="locomotive-modal">
+        <div className="locomotive-modal" tabIndex={1}>
           {modalDetails.isOpen && modalDetails.locomotive && (
             <LocomotiveModal
               locomotiveName={modalDetails.locomotive.name}
@@ -28,17 +26,20 @@ const Mapa = () => {
               locomotiveStatus={modalDetails.locomotive.status}
               locomotiveRoute={modalDetails.locomotive_route}
               onClick={handleCloseModal}
+              aria-label="Detalhes da Locomotiva"
             />
           )}
         </div>
+        <div className="full-map-wrapper" tabIndex={2}>
+          <Map
+            center={center}
+            locomotivesRouteDetails={globalState.locomotivesRouteDetails}
+            onMarkerClick={handleClickOnLocomotiveMarker}
+            aria-label="Mapa de Localização das Locomotivas"
+          />
+        </div>
 
-        <Map
-          center={center}
-          locomotivesRouteDetails={globalState.locomotivesRouteDetails}
-          onMarkerClick={handleClickOnLocomotiveMarker}
-        />
-
-        <div className="locomotive-status-subtitle">
+        <div className="locomotive-status-subtitle" tabIndex={3}>
           {statusSubtitles &&
             statusSubtitles.map((statusSubtitle, index) => {
               return (

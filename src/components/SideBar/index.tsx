@@ -25,14 +25,14 @@ const SideBar = () => {
     {
       icon: TrendingUpOutlinedIcon,
       label: "Análises",
-      redirectTo: "/analises",
+      redirectTo: "/analise",
     },
   ];
 
   return (
     <div className="sideBarContainer">
       <div className="side-bar-logo-image">
-        <img src={"/TecnoviaLogo.svg"} alt="logo: Tecnovia" />
+        <img src={"/TecnoviaLogo.svg"} alt="Tecnovia" />
       </div>
       <div className="menuContainer">
         {menuButtons.map((button, index) => (
@@ -42,12 +42,15 @@ const SideBar = () => {
             label={button.label}
             redirectTo={button.redirectTo}
             isActive={location.pathname === button.redirectTo}
+            aria-label={`Ir para a página: ${button.label}`}
           />
         ))}
       </div>
       <button
         className="myAcountButton"
         onClick={() => handleClickOnProfileButton()}
+        tabIndex={0}
+        aria-label="Acessar meu perfil"
       >
         <AccountCircleOutlinedIcon
           htmlColor="#FFF7F2"

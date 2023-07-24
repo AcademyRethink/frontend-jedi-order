@@ -19,18 +19,25 @@ const CenterPanel = () => {
     <div className="center-panel-screen-container">
       <div className="overview-info">
         <div className="admLocomotives">
+          <div tabIndex={-1} aria-hidden="true"></div>
           <AdministrativeLocomotive
             locomotiveOverviewData={globalState.locomotivesOverviewData}
+            aria-label="Informações da Locomotiva Administrativa"
           />
-          <div className="failures">
+          <div
+            className="failures"
+            tabIndex={0}
+            aria-label="Histórico de Falhas"
+          >
             <FailureHistory reports={reports} />
           </div>
         </div>
         <div className="map-overview-container">
-          <div className="center-panel-map-container">
+          <div className="center-panel-map-container" tabIndex={0}>
             <Map
               center={center}
               locomotivesRouteDetails={globalState.locomotivesRouteDetails}
+              aria-label="Mapa de Visão Geral"
             />
           </div>
         </div>

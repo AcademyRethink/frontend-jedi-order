@@ -22,6 +22,8 @@ const MenuButton = ({ icon, label, redirectTo, isActive }: MenuButtonProps) => {
     <button
       className="menu-sidebar-container-button"
       onClick={() => handleClickOnButton(redirectTo)}
+      tabIndex={0}
+      aria-label={`Navegar para ${label}`}
     >
       <div className="menu-button-container">
         <div

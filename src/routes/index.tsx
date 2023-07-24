@@ -7,6 +7,7 @@ import ChangePasswordView from "../screens/ChangePassword/ChangePasswordView";
 import Analysis from "../screens/Analysis/Analysis";
 import SideBar from "../components/SideBar";
 import "./styles.css";
+import ErrorScreen from "../screens/ErrorScreen";
 
 const AuthenticatedRoutes = () => (
   <div className="default-app-screen">
@@ -18,6 +19,7 @@ const AuthenticatedRoutes = () => (
         <Route path="/analise" element={<Analysis />} />
         <Route path="/minha-conta" element={<MyAccountView />} />
         <Route path="/trocar-senha" element={<ChangePasswordView />} />
+        <Route path="/erro" element={<ErrorScreen />} />
         <Route path="/*" element={<Navigate to="/painel-central" />} />
       </Routes>
     </div>
