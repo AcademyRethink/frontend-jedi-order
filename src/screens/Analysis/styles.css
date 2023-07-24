@@ -1,22 +1,55 @@
 .analysis-screen {
-  height: 100vh;
-  width: 100vw;
+  background-color: var(--secondary-301);
   display: flex;
+  height: 100vh;
 }
 
 .analysis-content {
   background-color: purple;
   flex: 1;
-  margin-left: 12.8rem;
+  margin-left: 6.8rem;
+  margin-right: 6.8rem;
 }
 
 .export-report {
-  height: 9.6rem;
-  background-color: aqua;
+  height: 96px;
+  border-radius: 8px;
+background: #FFEFE5;
   margin-top: 4.8rem;
   margin-bottom: 6.4rem;
   flex: 1;
+  color: var(--secundria-03, #26211E);
+font-family: Roboto;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+display: flex;
+align-items: center;
+padding-left: 50px;
+justify-content: space-between;
 }
+
+.button-report Button{
+  color: var(--secundria-301, #FFF7F2);
+text-align: center;
+
+/* Texto corrido/Bold */
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 24px */
+display: flex;
+margin-right: 50px;
+}
+
+.modal-personalized {
+ width: 698px;
+height: 208px;
+background-color: #26211E;
+}
+
 
 .comparison-content {
   display: flex;
@@ -34,7 +67,13 @@
 }
 
 .monthly-comparison {
-  width: 59.2rem;
-  height: 80.3rem;
-  background-color: blue;
+  width: 66.2rem;
+  height: 70.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFEFE5;
+  flex-direction: column;
+  gap: 30px;
 }
+
