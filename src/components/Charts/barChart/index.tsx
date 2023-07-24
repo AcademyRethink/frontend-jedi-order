@@ -7,9 +7,9 @@ import { FailureType, FormValues } from "../../../types/charts";
 const ChartBarWithDateAndFailureFilter: React.FC = () => {
   const failureTypes = useFailureTypes();
   const [formData, setFormData] = useState<FormValues>({
-    startDate: "",
-    endDate: "",
-    failureType: 0,
+    startDate: "2023-01-01",
+    endDate: "2023-07-31",
+    failureType: 2,
   });
   const failureData = useFailureData(formData);
 
