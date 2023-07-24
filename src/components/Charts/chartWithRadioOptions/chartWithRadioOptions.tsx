@@ -66,42 +66,45 @@ const RadioBarChart: React.FC = () => {
   };
 
   return (
-    <div className="radio-bar-chart">
-      <div className="chart-container">
-        {failureData.length > 0 ? (
-          <Bar
-            data={chartData}
-            options={{
-              maintainAspectRatio: false,
-              scales: {
-                y: {
-                  beginAtZero: true,
+    <div className="fullcontainer">
+      <div className="chart-title">Por problema</div>
+      <div className="radio-bar-chart">
+        <div className="chart-container">
+          {failureData.length > 0 ? (
+            <Bar
+              data={chartData}
+              options={{
+                maintainAspectRatio: false,
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
                 },
-              },
-              plugins: {
-                legend: {
-                  display: false,
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
                 },
-              },
-            }}
-          />
-        ) : (
-          <p>Não há registros com os dados informados.</p>
-        )}
-      </div>
-      <div className="radio-items">
-        {failureTypes.map((failureType) => (
-          <div className="item" key={failureType.id}>
-            <input
-              type="radio"
-              name="failureType"
-              value={failureType.id}
-              checked={selectedFailureType === failureType.id}
-              onChange={() => setSelectedFailureType(failureType.id)}
+              }}
             />
-            <label>{failureType.failure_type}</label>
-          </div>
-        ))}
+          ) : (
+            <p>Não há registros com os dados informados.</p>
+          )}
+        </div>
+        <div className="radio-items">
+          {failureTypes.map((failureType) => (
+            <div className="item" key={failureType.id}>
+              <input
+                type="radio"
+                name="failureType"
+                value={failureType.id}
+                checked={selectedFailureType === failureType.id}
+                onChange={() => setSelectedFailureType(failureType.id)}
+              />
+              <label>{failureType.failure_type}</label>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

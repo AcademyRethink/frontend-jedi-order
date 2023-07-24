@@ -6,6 +6,7 @@ import DateForm from "../../components/ExportCsvForm";
 import ChartForm from "../../components/Charts/barChart/form";
 import BarChart from "../../components/Charts/barChart/barChart";
 import RadioBarChart from "../../components/Charts/chartWithRadioOptions/chartWithRadioOptions";
+import ReportTable from "../../components/ReportTable";
 import { useState } from "react";
 import { FormValues } from "../../types/charts";
 
@@ -59,19 +60,11 @@ const Analysis = () => {
           </div>
         </div>
         <div className="comparison-content">
-          <div className="weekly-comparison"></div>
+          <div className="weekly-comparison">
+            <ReportTable />
+          </div>
           <div className="monthly-comparison">
-            <div>
-              <ChartForm
-                onSubmit={() => handleSubmitFailureDataForm(formData)}
-                failureTypes={failureTypes}
-              />
-              {hasData ? (
-                <BarChart data={failureData} />
-              ) : (
-                <p>Não há dados disponíveis com os filtros informados.</p>
-              )}
-            </div>
+            <ChartBarWithDateAndFailureFilter />
             <RadioBarChart />
           </div>
         </div>

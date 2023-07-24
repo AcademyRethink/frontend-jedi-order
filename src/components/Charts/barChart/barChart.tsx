@@ -66,7 +66,7 @@ const BarChart: React.FC<ChartBarProps> = ({ data }) => {
   };
 
   return (
-    <div className="chart-container">
+    <div className="chart-container-first">
       {" "}
       <Bar data={chartData} options={chartOptions} />;{" "}
     </div>
