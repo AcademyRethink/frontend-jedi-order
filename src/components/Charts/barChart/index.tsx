@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import ChartForm from "./form";
 import BarChart from "./barChart";
-import { useFailureTypes, useFailureData } from "../../../hooks/barChart";
-import { FailureType, FormValues } from "../../../types/charts";
+import { FormValues } from "../../../types/charts";
+import useCommunicationReportsViewModel from "../../../viewmodel/useCommunicationReportsViewModel";
 
 const ChartBarWithDateAndFailureFilter: React.FC = () => {
-  const failureTypes = useFailureTypes();
+  const { failureTypes, failureData, getFailureData } =
+    useCommunicationReportsViewModel();
   const [formData, setFormData] = useState<FormValues>({
     startDate: "2023-01-01",
     endDate: "2023-07-31",
     failureType: 2,
   });
-  const failureData = useFailureData(formData);
 
-  const handleSubmit = (formData: FormValues) => {
-    setFormData(formData);
+  const handleSubmit = (formValues: FormValues) => {
+    setFormData(formValues);
+    getFailureData(formData);
   };
 
   const hasData = failureData.length > 0;

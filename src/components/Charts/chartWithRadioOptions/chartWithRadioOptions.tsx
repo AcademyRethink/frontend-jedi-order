@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useFailureTypes, useFailureData } from "../../../hooks/barChart";
-import {
-  FailureType,
-  FailureData,
-  FailureDataMonth,
-  ChartData,
-} from "../../../types/charts";
+import { ChartData } from "../../../types/charts";
 import {
   Chart,
   CategoryScale,
@@ -17,17 +11,18 @@ import {
 } from "chart.js";
 import translateMonth from "../../../utils/translateMonthsNames";
 import { Bar } from "react-chartjs-2";
-import { fetchFailureDataCount } from "../../../model/api/failureCommunicationChartBar";
 import "./styles.css";
+import useAnalysisViewController from "../../../screens/Analysis/useAnalysisViewController";
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const RadioBarChart: React.FC = () => {
-  const failureTypes = useFailureTypes();
+  const { failureTypes, failureData, getFailureDataCount, failureDataCount } =
+    useAnalysisViewController();
+  console.log(failureTypes);
   const [selectedFailureType, setSelectedFailureType] = useState<number | null>(
     null
   );
-  const [failureData, setFailureData] = useState<FailureDataMonth[]>([]);
 
   useEffect(() => {
     if (failureTypes.length > 0 && selectedFailureType === null) {
@@ -35,11 +30,10 @@ const RadioBarChart: React.FC = () => {
     }
 
     if (selectedFailureType !== null) {
-      fetchFailureDataCount(selectedFailureType)
-        .then((data) => setFailureData(data))
-        .catch((error) => console.error("Error fetching failure data:", error));
+      getFailureDataCount(selectedFailureType);
+      console.log(failureDataCount);
     }
-  }, [selectedFailureType, failureTypes]);
+  }, [failureData, failureTypes, getFailureDataCount, selectedFailureType]);
 
   const getBarColors = () => {
     return failureData
@@ -48,9 +42,16 @@ const RadioBarChart: React.FC = () => {
       )
       .join(",");
   };
+  let translatedMonths: string[] = [];
+
+  if (failureDataCount) {
+    translatedMonths = failureDataCount.map((data) =>
+      translateMonth(data.month.trim())
+    );
+  }
 
   const chartData: ChartData = {
-    labels: failureData.map((data) => translateMonth(data.month.trim())),
+    labels: translatedMonths,
     datasets: [
       {
         label: "Quantidade",

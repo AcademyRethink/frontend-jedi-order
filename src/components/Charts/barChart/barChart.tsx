@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { ChartBarProps, DataChart } from "../../../types/charts";
+import { ChartBarProps } from "../../../types/charts";
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 

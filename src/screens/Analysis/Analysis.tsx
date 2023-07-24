@@ -1,12 +1,36 @@
 import "./styles.css";
 import Button from "../../components/Button";
-import useAnalysisView from "./useAnalysisView";
+import useAnalysisViewController from "./useAnalysisViewController";
 import ModalToExport from "../../components/ModalToExport";
 import DateForm from "../../components/ExportCsvForm";
-import ChartBarWithDateAndFailureFilter from "../../components/Charts/barChart";
+import ChartForm from "../../components/Charts/barChart/form";
+import BarChart from "../../components/Charts/barChart/barChart";
 import RadioBarChart from "../../components/Charts/chartWithRadioOptions/chartWithRadioOptions";
+import { useState } from "react";
+import { FormValues } from "../../types/charts";
+
 const Analysis = () => {
-  const { closeModal, openModal, isModalOpen } = useAnalysisView();
+  const {
+    closeModal,
+    isModalOpen,
+    openModal,
+    failureTypes,
+    failureData,
+    getFailureData,
+  } = useAnalysisViewController();
+  const [formData, setFormData] = useState<FormValues>({
+    startDate: "2023-01-01",
+    endDate: "2023-07-31",
+    failureType: 2,
+  });
+
+  const handleSubmitFailureDataForm = (formValues: FormValues) => {
+    setFormData(formValues);
+    getFailureData(formData);
+  };
+
+  const hasData = failureData.length > 0;
+
   return (
     <div className="analysis-screen">
       <div className="analysis-content">
@@ -37,7 +61,17 @@ const Analysis = () => {
         <div className="comparison-content">
           <div className="weekly-comparison"></div>
           <div className="monthly-comparison">
-            <ChartBarWithDateAndFailureFilter />
+            <div>
+              <ChartForm
+                onSubmit={() => handleSubmitFailureDataForm(formData)}
+                failureTypes={failureTypes}
+              />
+              {hasData ? (
+                <BarChart data={failureData} />
+              ) : (
+                <p>Não há dados disponíveis com os filtros informados.</p>
+              )}
+            </div>
             <RadioBarChart />
           </div>
         </div>
