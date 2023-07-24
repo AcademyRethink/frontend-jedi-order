@@ -5,6 +5,7 @@ import ModalToExport from "../../components/ModalToExport";
 import DateForm from "../../components/ExportCsvForm";
 import ChartBarWithDateAndFailureFilter from "../../components/Charts/barChart";
 import RadioBarChart from "../../components/Charts/chartWithRadioOptions/chartWithRadioOptions";
+import ReportTable from "../../components/ReportTable";
 const Analysis = () => {
   const { closeModal, openModal, isModalOpen } = useAnalysisView();
   return (
@@ -35,8 +36,11 @@ const Analysis = () => {
           </div>
         </div>
         <div className="comparison-content">
-          <div className="weekly-comparison"></div>
+          <div className="weekly-comparison">
+            <ReportTable />
+          </div>
           <div className="monthly-comparison">
+            <div className="title-comparison">Comparativo Mensal</div>
             <ChartBarWithDateAndFailureFilter />
             <RadioBarChart />
           </div>

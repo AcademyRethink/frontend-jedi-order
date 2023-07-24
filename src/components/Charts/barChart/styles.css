@@ -96,7 +96,8 @@ background: var(--secondary-301, #f4f2ff);
     display: flex;
     align-items: flex-end;
     margin-top: 20px;
-    border-radius: 8px;
+    padding-right: 24px;
+    
   }
   .failure-select-container select {
     display: flex;
@@ -127,6 +128,10 @@ background: var(--secondary-301, #f4f2ff);
 display: flex;
 align-self: flex-end;
 background-color: #FFF7F2;
+border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
   
 .input-container select {
@@ -176,13 +181,16 @@ background-color: #FFF7F2;
     background-color: var(--highlight-01);
   }
 
-  .chart-container {
+  .chart-container-first {
     width: 592px;
     height: 336px;
     flex-shrink: 0;
-    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 background: #FFF7F2;
-padding: 5px;
+padding: 28px;
   }
   
   .chart-container p {
