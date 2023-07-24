@@ -1,25 +1,28 @@
 import "./styles.css";
 import Input from "../../components/Input";
 import useLoginViewController from "./useLoginViewController";
+import LoadingComponent from "../../components/Loading";
 
 const LoginView = () => {
-  const { handleSubmit, errorMessage } = useLoginViewController()
+  const { isLoading, error, handleSubmit } = useLoginViewController();
+
+  if (isLoading) return <LoadingComponent />;
 
   return (
     <div className="containerLogin">
       <div className="loginCard">
         <form className="loginForm" onSubmit={handleSubmit}>
-          <h1>Tecnovia </h1>
+          <h1>Tecnovia</h1>
           <h3>Olá, acesse a sua conta</h3>
           <div className="inputsLogin">
             <div className="emailInput">
               <Input
                 name="email"
                 placeholder="Digite o seu e-mail"
-                type= "email"
+                type="email"
                 label="Email"
                 required
-                tabIndex={0}
+                tabIndex={1}
               />
               <p>Ex: emailexemplo@exemplo.com</p>
             </div>
@@ -29,13 +32,22 @@ const LoginView = () => {
               type="password"
               label="Senha"
               required
-              tabIndex={0}
+              tabIndex={2}
             />
           </div>
-          {errorMessage && <p className="error">{errorMessage}</p>}
-          <div className="button">
-            <button className="btn-Login" type="submit" tabIndex={0}>Entrar</button>
-            <a href="" tabIndex={0}>Precisa de Ajuda?</a>
+          {error && <p className="error">{error}</p>}
+          <div className="login-button-container">
+            <button
+              className="btn-Login"
+              type="submit"
+              tabIndex={3}
+              aria-label="Entrar na conta"
+            >
+              Entrar
+            </button>
+            <a href="#" tabIndex={4}>
+              Precisa de Ajuda?
+            </a>
           </div>
         </form>
       </div>

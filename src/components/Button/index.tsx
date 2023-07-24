@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 interface ButtonProps {
   icon?: React.ReactNode;
-  text: string;
+  text?: string;
   background?: string;
   color?: string;
   onClick?: () => void; 

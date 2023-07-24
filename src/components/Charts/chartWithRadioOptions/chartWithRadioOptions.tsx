@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useFailureTypes, useFailureData } from "../../../hooks/barChart";
-import {
-  FailureType,
-  FailureData,
-  FailureDataMonth,
-  ChartData,
-} from "../../../types/charts";
+import { ChartData } from "../../../types/charts";
 import {
   Chart,
   CategoryScale,
@@ -17,17 +11,18 @@ import {
 } from "chart.js";
 import translateMonth from "../../../utils/translateMonthsNames";
 import { Bar } from "react-chartjs-2";
-import { fetchFailureDataCount } from "../../../model/api/failureCommunicationChartBar";
 import "./styles.css";
+import useAnalysisViewController from "../../../screens/Analysis/useAnalysisViewController";
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const RadioBarChart: React.FC = () => {
-  const failureTypes = useFailureTypes();
+  const { failureTypes, failureData, getFailureDataCount, failureDataCount } =
+    useAnalysisViewController();
+  console.log(failureTypes);
   const [selectedFailureType, setSelectedFailureType] = useState<number | null>(
     null
   );
-  const [failureData, setFailureData] = useState<FailureDataMonth[]>([]);
 
   useEffect(() => {
     if (failureTypes.length > 0 && selectedFailureType === null) {
@@ -35,11 +30,10 @@ const RadioBarChart: React.FC = () => {
     }
 
     if (selectedFailureType !== null) {
-      fetchFailureDataCount(selectedFailureType)
-        .then((data) => setFailureData(data))
-        .catch((error) => console.error("Error fetching failure data:", error));
+      getFailureDataCount(selectedFailureType);
+      console.log(failureDataCount);
     }
-  }, [selectedFailureType, failureTypes]);
+  }, [failureData, failureTypes, getFailureDataCount, selectedFailureType]);
 
   const getBarColors = () => {
     return failureData
@@ -48,9 +42,16 @@ const RadioBarChart: React.FC = () => {
       )
       .join(",");
   };
+  let translatedMonths: string[] = [];
+
+  if (failureDataCount) {
+    translatedMonths = failureDataCount.map((data) =>
+      translateMonth(data.month.trim())
+    );
+  }
 
   const chartData: ChartData = {
-    labels: failureData.map((data) => translateMonth(data.month.trim())),
+    labels: translatedMonths,
     datasets: [
       {
         label: "Quantidade",
@@ -65,42 +66,45 @@ const RadioBarChart: React.FC = () => {
   };
 
   return (
-    <div className="radio-bar-chart">
-      <div className="chart-container">
-        {failureData.length > 0 ? (
-          <Bar
-            data={chartData}
-            options={{
-              maintainAspectRatio: false,
-              scales: {
-                y: {
-                  beginAtZero: true,
+    <div className="fullcontainer">
+      <div className="chart-title">Por problema</div>
+      <div className="radio-bar-chart">
+        <div className="chart-container">
+          {failureData.length > 0 ? (
+            <Bar
+              data={chartData}
+              options={{
+                maintainAspectRatio: false,
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
                 },
-              },
-              plugins: {
-                legend: {
-                  display: false,
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
                 },
-              },
-            }}
-          />
-        ) : (
-          <p>Não há registros com os dados informados.</p>
-        )}
-      </div>
-      <div className="radio-items">
-        {failureTypes.map((failureType) => (
-          <div className="item" key={failureType.id}>
-            <input
-              type="radio"
-              name="failureType"
-              value={failureType.id}
-              checked={selectedFailureType === failureType.id}
-              onChange={() => setSelectedFailureType(failureType.id)}
+              }}
             />
-            <label>{failureType.failure_type}</label>
-          </div>
-        ))}
+          ) : (
+            <p>Não há registros com os dados informados.</p>
+          )}
+        </div>
+        <div className="radio-items">
+          {failureTypes.map((failureType) => (
+            <div className="item" key={failureType.id}>
+              <input
+                type="radio"
+                name="failureType"
+                value={failureType.id}
+                checked={selectedFailureType === failureType.id}
+                onChange={() => setSelectedFailureType(failureType.id)}
+              />
+              <label>{failureType.failure_type}</label>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

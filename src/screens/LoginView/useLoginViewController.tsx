@@ -1,44 +1,33 @@
-import {useState, FormEvent, useEffect} from 'react'
-import { verifyUser } from "../../model/api/login";
-import { useNavigate  } from 'react-router-dom';
+import { useState, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
+import useLoginViewModel from "../../viewmodel/useLoginViewModel";
 
 const useLoginViewController = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState({ email: '', password: '' });
-  const [errorMessage, setErrorMessage] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setisLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      navigate('/center-panel');
-    }
-  }, [navigate]);
-  
-  useEffect(() => {
-    if (user.email !== '' && user.password !== '') {
-      verifyUser(user)
-        .then((resp) => {
-          navigate('/center-panel');
-        })
-        .catch((error) => {
-          setErrorMessage(error.message)
-        });
-    }
-  }, [user, navigate]);
+  const { authenticateUser } = useLoginViewModel();
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    setisLoading(true);
     event.preventDefault();
-    
-    const formData = new FormData(event.currentTarget);
-    const email = formData.get('email') as string;
-    const password = formData.get('senha') as string;
 
-    setUser({ email, password });
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get("email") as string;
+    const password = formData.get("senha") as string;
+    authenticateUser({ email, password })
+      .then(() => {
+        setisLoading(false);
+        navigate("/painel-central");
+      })
+      .catch((error) => setError(error.message));
   };
 
   return {
     handleSubmit,
-    errorMessage
+    error,
+    isLoading,
   };
 };
 

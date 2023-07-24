@@ -1,15 +1,12 @@
-import "./styles.css";
+import { ReportType } from "../../types/reports";
 import ImageAndWriting from "../ImageAndWriting";
-import useReportsViewModel from "../../viewmodel/useReportsViewModel";
-import { useEffect } from "react";
+import "./styles.css";
 
-const FailureHistory = () => {
-  const { getLastFourReports, reports } = useReportsViewModel();
+type FailureHistoryProps = {
+  reports: ReportType[];
+};
 
-  useEffect(() => {
-    getLastFourReports();
-  }, []);
-
+const FailureHistory = ({ reports }: FailureHistoryProps) => {
   return (
     <div className="failureHistory">
       <div className="text">
@@ -19,8 +16,8 @@ const FailureHistory = () => {
       <div className="reports-container">
         {reports.length > 0 &&
           reports.map((report) => (
-            <div className="StatusOflocomotive">
-              <div className="title">
+            <div className="StatusOflocomotive" key={report.id}>
+              <div className="title" aria-label="Título da falha">
                 <ImageAndWriting
                   icon="error"
                   label={report.description}
@@ -28,8 +25,12 @@ const FailureHistory = () => {
                   fontSize="2rem"
                 />
                 <div className="time-and-date">
-                  <div className="time">{report.time.slice(0, 5)}</div>
-                  <div className="date">{"| " + report.date.slice(0, 5)}</div>
+                  <div className="time" aria-label="Hora do falha">
+                    {report.time.slice(0, 5)}
+                  </div>
+                  <div className="date" aria-label="Dia do falha">
+                    {"| " + report.date.slice(0, 5)}
+                  </div>
                 </div>
               </div>
               <div className="statusDescriptions">
@@ -37,16 +38,19 @@ const FailureHistory = () => {
                   icon="train"
                   label={report.locomotive}
                   fontSize="2rem"
+                  aria-label="Nome da locomotiva com falha"
                 />
                 <ImageAndWriting
                   icon="person"
                   label={report.driver}
                   fontSize="2rem"
+                  aria-label="Maquinista no momento da falha"
                 />
                 <ImageAndWriting
                   icon="location"
                   label={report.location}
                   fontSize="2rem"
+                  aria-label="Local da locomotiva no momento da falha"
                 />
               </div>
             </div>

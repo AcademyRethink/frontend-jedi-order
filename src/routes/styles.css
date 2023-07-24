@@ -1,0 +1,13 @@
+.default-screen-container {
+  padding-left: 12.8rem;
+}
+
+.default-app-screen {
+  box-sizing: border-box;
+}
+
+@media (max-width: 650px) {
+  .default-screen-container {
+    padding-left: 8rem;
+  }
+}

@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { ChartBarProps, DataChart } from "../../../types/charts";
+import { ChartBarProps } from "../../../types/charts";
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -66,7 +66,7 @@ const BarChart: React.FC<ChartBarProps> = ({ data }) => {
   };
 
   return (
-    <div className="chart-container">
+    <div className="chart-container-first">
       {" "}
       <Bar data={chartData} options={chartOptions} />;{" "}
     </div>

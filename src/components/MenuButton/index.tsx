@@ -7,9 +7,10 @@ interface MenuButtonProps {
   icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & { muiName: string };
   label?: string;
   redirectTo: string;
+  isActive: boolean;
 }
 
-const MenuButton = ({ icon, label, redirectTo }: MenuButtonProps) => {
+const MenuButton = ({ icon, label, redirectTo, isActive }: MenuButtonProps) => {
   const navigate = useNavigate();
 
   const handleClickOnButton = (redirectTo: string) => {
@@ -21,9 +22,15 @@ const MenuButton = ({ icon, label, redirectTo }: MenuButtonProps) => {
     <button
       className="menu-sidebar-container-button"
       onClick={() => handleClickOnButton(redirectTo)}
+      tabIndex={0}
+      aria-label={`Navegar para ${label}`}
     >
       <div className="menu-button-container">
-        <div className="menu-button-icon-container">
+        <div
+          className={`menu-button-icon-container ${
+            isActive ? "menu-button-icon-container-active" : ""
+          }`}
+        >
           <Icon htmlColor="#FFF7F2" style={{ height: 32, width: 32 }} />
         </div>
         <h1 className="menu-button-label">{label}</h1>
