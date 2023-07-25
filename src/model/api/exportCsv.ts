@@ -1,7 +1,7 @@
 import axios from "axios";
 import { FormData } from "../../types/exportCsv";
 
-const apiUrl = "http://localhost:3000/communication-reports";
+const apiUrl = "https://localhost:3000/communication-reports";
 
 export const fetchCSVData = async (data: FormData): Promise<Blob> => {
   try {

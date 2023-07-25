@@ -3,7 +3,7 @@
   display: flex;
   height: 100vh;
   width: 100%;
-  padding: 4.8rem;
+  padding: 3.8rem;
   overflow: hidden;
 }
 
@@ -43,7 +43,7 @@
 .comparison-content {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   margin-top: 3.7rem;
 }
 
@@ -81,14 +81,17 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 2.4rem 0;
+  padding: 1.4rem 0;
   width: 100%;
   height: 100%;
 }
 
 .bar-chart-container {
-  height: 30rem;
+  height: 20rem;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: -60px;
 }
 
 .form-container {
@@ -158,7 +161,7 @@
 .form-container select {
   display: flex;
   width: 256px;
-  height: 48px;
+  height: 39px;
 
   color: var(--primary-01, #321100);
   font-family: Roboto;
@@ -177,6 +180,10 @@
   align-items: flex-end;
   margin-top: 20px;
   padding-right: 24px;
+}
+
+.failure-select-container button {
+ z-index: 99;
 }
 .failure-select-container select {
   display: flex;
@@ -236,7 +243,6 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   background: #fff7f2;
-  padding: 28px;
 }
 
 .chart-container p {
@@ -282,10 +288,15 @@ table.custom-table {
   color: var(--secondary-03);
 }
 
+.bar-chart-container button{
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
 table.custom-table th,
 table.custom-table td {
   width: 164px;
-  height: 40px;
+  height: 30px;
   padding: 0 16px;
   text-align: center;
 }
@@ -314,7 +325,7 @@ table.custom-table td#totalPanes {
 }
 
 .bar-chart-empty {
-  width: 100%;
+  width: 70%;
   height: 100%;
   display: flex;
   justify-content: center;

@@ -3,12 +3,13 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 0%;
 }
 
 .daily-comparison-container {
-  padding: 2.4rem 0;
+  padding: 1.4rem 0;
   height: 100%;
+  width: 80%;
 }
 
 .daily-comparison-select {

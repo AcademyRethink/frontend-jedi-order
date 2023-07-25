@@ -46,7 +46,7 @@ const Analysis = () => {
   return (
     <div className="analysis-screen">
       <div className="analysis-content">
-        <div className="export-report">Análise de falhas de comunicação</div>
+        <div className="export-report">Análise de falhas</div>
         <div className="comparison-content">
           <div className="weekly-comparison">
             <p>Comparativo diário</p>
@@ -91,43 +91,47 @@ const Analysis = () => {
                           <span className="material-icons">calendar_today</span>
                         </div>
                       </label>
-
-                      <button type="submit">Exibir dados</button>
+                      <label>
+                        Selecione o problema
+                        <select
+                          className="custom-select"
+                          value={failureTypeId}
+                          onChange={(e) =>
+                            setFailureTypeId(parseInt(e.target.value))
+                          }
+                        >
+                          <option value={0}>Selecione o problema</option>
+                          {failureTypes &&
+                            failureTypes.map((type) => (
+                              <option key={type.id} value={type.id}>
+                                {type.failure_type}
+                              </option>
+                            ))}
+                        </select>
+                      </label>
                     </div>
                     <div className="chart-title">Por locomotiva</div>
+
                     <div className="second-line">
                       <div className="failure-select-container">
-                        <label>
-                          Selecione o problema
-                          <select
-                            className="custom-select"
-                            value={failureTypeId}
-                            onChange={(e) =>
-                              setFailureTypeId(parseInt(e.target.value))
-                            }
-                          >
-                            <option value={0}>Selecione o problema</option>
-                            {failureTypes &&
-                              failureTypes.map((type) => (
-                                <option key={type.id} value={type.id}>
-                                  {type.failure_type}
-                                </option>
-                              ))}
-                          </select>
-                        </label>
+                        <button type="submit">Exibir dados</button>
+                        <div className="bar-chart-container">
+                          {hasData ? (
+                            <BarChart data={failureData} />
+                          ) : (
+                            <div className="bar-chart-empty">
+                              <p>
+                                Não há dados disponíveis com os filtros
+                                informados.
+                              </p>
+                            </div>
+                          )}
+                        </div>{" "}
                       </div>
                     </div>
                   </form>
                 </div>
-              </div>
-              <div className="bar-chart-container">
-                {hasData ? (
-                  <BarChart data={failureData} />
-                ) : (
-                  <div className="bar-chart-empty">
-                    <p>Não há dados disponíveis com os filtros informados.</p>
-                  </div>
-                )}
+                <RadioBarChart />
               </div>
             </div>
           </div>

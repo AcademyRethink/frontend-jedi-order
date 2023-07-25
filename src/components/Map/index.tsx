@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import "./styles.css";
 import { LocomotiveRoutePositionDTO } from "../../types/locomotives";
 import Marker from "../Marker";
-import LoadingComponent from "../Loading";
+import LoadingComponent from "../LoadingComponent";
 
 type MapProps = {
   center: {

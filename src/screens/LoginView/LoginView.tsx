@@ -1,12 +1,12 @@
 import "./styles.css";
 import Input from "../../components/Input";
 import useLoginViewController from "./useLoginViewController";
-import LoadingComponent from "../../components/Loading";
+import LoginLoading from "../../components/LoginLoading";
 
 const LoginView = () => {
   const { isLoading, error, handleSubmit } = useLoginViewController();
 
-  if (isLoading) return <LoadingComponent />;
+  if (isLoading) return <LoginLoading />;
 
   return (
     <div className="containerLogin">
