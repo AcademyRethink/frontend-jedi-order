@@ -29,7 +29,7 @@ const FailureHistory = ({ reports }: FailureHistoryProps) => {
                     {report.time.slice(0, 5)}
                   </div>
                   <div className="date" aria-label="Dia do falha">
-                    {"| " + report.date.slice(0, 5)}
+                    {"| " + report.date.slice(0, 4)}
                   </div>
                 </div>
               </div>
