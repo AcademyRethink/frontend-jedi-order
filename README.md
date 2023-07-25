@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+<h1 align="center">
+  Jedi Order - Frontend Ferroviário 🚂
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <p>Frontend desenvolvido com <a href="https://www.typescriptlang.org/pt/docs/handbook/react.html">React e TypeScript </a> </p>
+</div>
 
-## Available Scripts
+<h2 align="center">
+  Preview do frontend 👁
+</h2>
+<div align="center">
+  <img width="393" alt="image" src="https://github.com/AcademyRethink/frontend-jedi-order/assets/125494950/e3e251a8-c937-46a6-af6f-890ce8734bd3">
+  <img width="393" alt="image" src="https://github.com/AcademyRethink/frontend-jedi-order/assets/125494950/658d2ea1-2ead-4341-a3eb-0a3129f094c9">
+  <img width="393" alt="image" src="https://github.com/AcademyRethink/frontend-jedi-order/assets/125494950/40fa0fc7-f672-436d-85a0-fccf9c0b317b">
+</div>
 
-In the project directory, you can run:
+# No que consiste o projeto?
+<p>O nosso produto consiste em um Dashboard desenvolvido especificamente para atender às necessidades das empresas siderúrgicas que dependem do modal ferroviário para o transporte de seus produtos. O foco principal do produto é oferecer aos controladores ferroviários uma maneira fácil e simplificada de interpretar dados, permitindo que tomem decisões rápidas e precisas no seu dia a dia.
 
-### `npm start`
+O produto possui duas funcionalidades principais: um Mapa para controle e gerenciamento em tempo real das locomotivas, e a Análise de falhas através de gráficos para os controladores. Essas funcionalidades visam melhorar a eficiência operacional, reduzir os custos de desenvolvimento de software interno e fornecer segurança nas tomadas de decisão dos responsáveis.</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Documentação do projeto
+A documentação completa do produto se encontra no <a href="https://www.notion.so/1a26ee60baaf41dd883fcd6a15b53ce9?v=294a95e3e1bc478a85e32819630426b6&pvs=4">Notion</a>.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Pré-requisitos
+Antes de executar o projeto, verifique se o seu ambiente atende aos seguintes requisitos:
 
-### `npm test`
+- Node.js (versão 18.14.0)
+- React (versão 18.2.0)
+- Outras dependências do projeto podem ser instaladas executando o comando npm install.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Configuração
+Siga as etapas abaixo para configurar o projeto em seu ambiente local:
 
-### `npm run build`
+- Clone este repositório: git clone https://github.com/AcademyRethink/frontend-jedi-order.git 
+- Navegue até o diretório do projeto: cd frontend-jedi-order
+- Instale as dependências: npm install
+- Copie o arquivo de configuração de exemplo e renomeie-o para .env: cp .env.example .env
+- Edite o arquivo .env e configure as variáveis de ambiente de acordo com a sua configuração (como detalhes do banco de dados, chaves secretas, etc.).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Executando o projeto
+Após a configuração, você pode executar o projeto executando o seguinte comando:
+*npm start*. <br> 
+Isso iniciará o servidor do frontend e você poderá acessar as rotas por meio da URL http://localhost:3000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Tecnologias Utilizadas 💻
+ - TypeScript
+ - Node.js
+ - React
+ - Axios
+ - HTML
+ - CSS
+ - React-chartjs-2
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Squad 🚀
+<div align="center">
+  <img src="https://github.com/AcademyRethink/backend-jedi-order/assets/124913198/e178676a-77ec-455f-8570-aab8b8852eab" alt="Imagem Amanda" width="60" height="60">
+  <img src="https://github.com/AcademyRethink/backend-jedi-order/assets/124913198/9f3431e5-9293-4350-b832-13a48efa1f31" alt="Imagem Andre" width="60" height="60">
+  <img src="https://github.com/AcademyRethink/backend-jedi-order/assets/124913198/710a0bea-9a16-42c6-9be7-2be7b4dfaac0" alt="Imagem Caio" width="60" height="60">
+  <img src="https://github.com/AcademyRethink/backend-jedi-order/assets/124913198/2bfd8696-3ea8-4de8-a2a0-1c71082ba128" alt="Imagem Daniela" width="60" height="60">
+  <img src="https://github.com/AcademyRethink/backend-jedi-order/assets/124913198/1c573eaf-4616-4324-b4d5-879b9b98bd8c" alt="Imagem Juliana" width="60" height="60">
+  <img src="https://github.com/AcademyRethink/backend-jedi-order/assets/124913198/ede58c61-bf20-4826-aa25-59355d1e0d56" alt="Imagem Luiz" width="60" height="60">
+</div>
+<div align="center">
+Amanda  -  André  -  Caio - Daniela - Juliana - Luiz
+</div>

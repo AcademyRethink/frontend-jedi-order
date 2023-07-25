@@ -1,0 +1,26 @@
+.myAccountView {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--secondary-301);
+}
+
+.containerMyAccount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.4rem;
+
+  padding: 10rem 0 0 5rem; /* superior | direita | inferior | esquerda*/
+}
+
+.headerMyAccount {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.headerMyAccount p {
+  font: var(--plain-text-regular);
+}

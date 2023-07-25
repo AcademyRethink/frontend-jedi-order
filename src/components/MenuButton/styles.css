@@ -1,0 +1,36 @@
+.menu-sidebar-container-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 0 3.2rem;
+}
+
+.menu-button-icon-container {
+  padding: 0.4rem 1.6rem;
+  border-radius: 0.8rem;
+  margin-bottom: 0.8rem;
+  width: min-content;
+}
+
+.menu-sidebar-container-button:hover {
+  background-color: var(--primary-02);
+}
+
+.menu-button-icon-container-active {
+  background-color: var(--primary-02);
+}
+
+.menu-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-button-label {
+  color: var(--secondary-301);
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}

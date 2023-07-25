@@ -1,0 +1,62 @@
+.modalCard-export {
+  width: 69.8rem;
+  height: 20.8rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.8rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.15);
+  background-color: var(--secondary-301);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+}
+
+.containerCardModal-export {
+  height: 100%;
+  width: 100%;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  position: fixed;
+  z-index: 99;
+}
+
+.export-modal-header-text h2 {
+  color: var(--secundria-03);
+  font-size: 2.4rem;
+}
+
+.export-modal-header-text p {
+  margin-top: 0.8rem;
+  font: var(--plain-text-regular);
+  color: var(--secundria-03);
+}
+
+.containerModal-export {
+  display: flex;
+  flex-direction: column;
+}
+
+.locomotive-modal-close-icon {
+  color: var(--secondary-204);
+}
+
+.icon-size {
+  transform: scale(1.6);
+}
+
+.export-modal-header button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.export-modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}

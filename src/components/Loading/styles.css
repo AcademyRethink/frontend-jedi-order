@@ -1,0 +1,42 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.loading-bar-container {
+  width: 80%;
+  height: 20px;
+  background-color: var(--secondary-201);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-03);
+  animation: loadingAnimation 2s infinite; /* Defina a duração da animação e o tipo de animação conforme necessário */
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}

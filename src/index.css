@@ -1,10 +1,87 @@
-body {
+:root {
+  --primary-01: #321100;
+  --primary-02: #461901;
+  --primary-03: #602809;
+  --primary-04: #793a18;
+  --primary-05: #9a4d23;
+
+  --secondary-01: #594e47;
+  --secondary-02: #403833;
+  --secondary-03: #26211e;
+  --secondary-04: #0d0b0a;
+
+  --secondary-201: #c26d40;
+  --secondary-202: #c25419;
+  --secondary-203: #883b11;
+  --secondary-204: #5c280c;
+
+  --secondary-301: #fff7f2;
+  --secondary-302: #ffefe5;
+  --secondary-303: #a04d18;
+  --secondary-304: #843807;
+
+  --feedback-color-running: #103200;
+  --feedback-color-running-2: #103200;
+  --feedback-color-stopped: #661200;
+  --feedback-color-stopped-2: #c3988e;
+  --feedback-color-equipament-problem: #9f0000;
+  --feedback-color-equipament-problem-2: #c3bb8e;
+  --feedback-color-maintenance: #4d1d03;
+  --feedback-color-maintenance-2: #c3a08e;
+
+  --highlight-01: #682d0d;
+  --highlight-02: #c25419;
+  --highlight-03: #dfb59f;
+  --highlight-04: #f2e2d9;
+
+  --font-h1: normal 500 3.2rem/120% "Roboto";
+  --font-h2: normal 700 2.8rem/120% "Roboto";
+  --font-h3: normal 400 2.4rem/120% "Roboto";
+  --font-h4: normal 500 2rem/120% "Roboto";
+  --plain-text-regular: normal 400 1.6rem/150% "Roboto";
+  --plain-text-medium: normal 500 1.6rem/150% "Roboto";
+  --plain-text-bold: normal 700 1.6rem/150% "Roboto";
+  --legend-text: normal 400 1.2rem/150% "Roboto";
+  --legend-text-bold: normal 700 1.2rem/100% "Roboto";
+
+  --size-xsmall: 2.4rem;
+  --size-small: 3.2rem;
+  --size-medium: 4rem;
+  --size-large: 6.4rem;
+  --size-xlarge: 8rem;
+}
+
+h1 {
+  font: var(--font-h1);
+}
+
+h2 {
+  font: var(--font-h2);
+}
+
+h3 {
+  font: var(--font-h3);
+}
+
+h4 {
+  font: var(--font-h4);
+}
+
+* {
+  font-size: 10px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-height: 800px) {
+  * {
+    font-size: 8.5px;
+  }
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -13,3 +90,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
