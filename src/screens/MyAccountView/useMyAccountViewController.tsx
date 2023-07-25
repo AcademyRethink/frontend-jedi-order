@@ -11,19 +11,15 @@ const useMyAccountViewController = () => {
   const { fetchUserById } = useMyAccountViewModel();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { unauthenticateUser } = useLoginViewModel();
-  const { globalState, setGlobalState } = useGlobalContext();
+  const { globalState } = useGlobalContext();
 
   useEffect(() => {
-    const id = localStorage.getItem("id");
     if (globalState.userId === undefined) {
-      setGlobalState((prevState) => ({
-        ...prevState,
-        userId: id ? id : undefined,
-      }));
+      logout();
     }
-    if (globalState.user === undefined && globalState.userId !== undefined)
+    if (globalState.user === undefined && globalState.userId !== undefined) {
       fetchUserById(globalState.userId);
-    else logout();
+    }
   }, []);
 
   const openModal = () => {

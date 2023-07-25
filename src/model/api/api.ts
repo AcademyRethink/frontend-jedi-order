@@ -6,7 +6,7 @@ const redirectToErrorPage = (navigate: NavigateFunction) => {
 };
 
 const api: AxiosInstance = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "http://tecnovia.rj.r.appspot.com/",
 });
 
 api.interceptors.request.use(
