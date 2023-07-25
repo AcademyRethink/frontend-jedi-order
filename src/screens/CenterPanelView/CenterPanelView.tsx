@@ -1,7 +1,7 @@
 import useCenterPanelViewController from "./CenterPanelViewController";
 import AdministrativeLocomotive from "../../components/AdministrativeLocomotive";
 import FailureHistory from "../../components/FailureHistory";
-import LoadingComponent from "../../components/Loading";
+import LoadingComponent from "../../components/LoadingComponent";
 import Map from "../../components/Map";
 import "./styles.css";
 
