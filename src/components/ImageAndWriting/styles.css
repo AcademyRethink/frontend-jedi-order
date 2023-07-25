@@ -1,0 +1,27 @@
+.imageAndWriting {
+  text-overflow: ellipsis;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.imageAndWriting-secundary {
+  color: var(--secondary-301);
+  font-weight: 500;
+  font-size: 2.4rem;
+  padding-left: 0.8rem;
+}
+
+.imageAndWriting-primary {
+  color: var(--primary-03);
+  font-weight: 400;
+  font-size: 1.6rem;
+  padding-left: 0.8rem;
+}
+
+.imageAndWriting-tertiary {
+  color: var(--secondary-04);
+  font-weight: 700;
+  font-size: 1.6rem;
+}

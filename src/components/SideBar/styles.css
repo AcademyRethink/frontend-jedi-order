@@ -1,34 +1,43 @@
 .sideBarContainer {
-    width: 125px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border-right: 1px solid rgb(207, 207, 207);
+  background-color: var(--secondary-204);
+  width: 12.8rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.expandButton {
-    margin-top: 40px;
-    height: 32px;
-    width: 32px;
+.side-bar-logo-image {
+  color: var(--secondary-301, #fff7f2);
+  margin-top: 4rem;
 }
 
 .menuContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 8px;
-    height: 216px;
-}
-
-.menuButton {
-    width: 40px;
-    height: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4rem;
+  justify-content: center;
 }
 
 .myAcountButton {
-    height: 96px;
-    width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 9.6rem;
+  width: 100%;
+  border: 1px solid #883b11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+@media (max-width: 650px) {
+  .sideBarContainer {
+    width: 8rem;
+  }
+}

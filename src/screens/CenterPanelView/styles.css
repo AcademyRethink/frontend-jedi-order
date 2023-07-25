@@ -1,0 +1,29 @@
+.center-panel-screen-container {
+  background-color: var(--secondary-301);
+  display: flex;
+  height: 100vh;
+}
+
+.overview-info {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.admLocomotives {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.map-overview-container {
+  width: 50%;
+}
+
+.center-panel-map-container {
+  height: 100%;
+  width: 100%;
+  padding: 3rem 13rem;
+}
