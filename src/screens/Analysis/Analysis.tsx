@@ -9,6 +9,7 @@ import RadioBarChart from "../../components/Charts/chartWithRadioOptions/chartWi
 import ReportTable from "../../components/ReportTable";
 import { useState } from "react";
 import { FormValues } from "../../types/charts";
+import ChartBarWithDateAndFailureFilter from "../../components/Charts/barChart";
 
 const Analysis = () => {
   const {
