@@ -1,0 +1,68 @@
+.export-modal-date-form-container {
+  width: 100%;
+}
+
+.export-modal-date-form-container form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 238, 229, 0.16);
+  background-color: var(--secondary-302);
+  box-shadow: 0px 4px 6px 0px rgba(160, 77, 24, 0.15);
+}
+
+.export-modal-date-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.8rem;
+  border: 1px solid var(--primary-02);
+  background-color: var(--secondary-301);
+  padding: 1.2rem 2.4rem;
+  width: 18.4rem;
+}
+
+.export-modal-date-form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.export-modal-date-input-container input {
+  border-radius: 0.8rem;
+  background: none;
+  border: none;
+  color: var(--primary-01);
+  font: var(--plain-text-regular);
+  outline: none;
+}
+
+.export-modal-date-input-container div {
+  color: #602809;
+}
+
+.export-modal-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.export-modal-date-form-inputs {
+  width: 100%;
+  margin-right: 7rem;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.export-modal-date-form-container form button {
+  display: flex;
+  width: 162px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--primary-02);
+  color: var(--secondary-301);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}

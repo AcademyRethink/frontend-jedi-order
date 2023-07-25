@@ -3,8 +3,9 @@ import "./styles.css";
 import { FormularioProps } from "../../../types/charts";
 
 const ChartForm: React.FC<FormularioProps> = ({ onSubmit, failureTypes }) => {
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [startDate, setStartDate] = useState("04/2023");
+
+  const [endDate, setEndDate] = useState("07/2023");
   const [failureType, setFailureType] = useState(0);
 
   const handleSubmit = (event: React.FormEvent) => {

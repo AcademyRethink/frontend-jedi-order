@@ -1,59 +1,62 @@
-.modalCard-export{
-    width: 698px;
-height: 208px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 0.8rem;
-    border: 2px solid rgba(0, 0, 0, 0.15);
-    background: #FFF7F2;
-    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.15);
-    z-index: 99;
-   
+.modalCard-export {
+  width: 69.8rem;
+  height: 20.8rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.8rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.15);
+  background-color: var(--secondary-301);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.15);
+  z-index: 99;
 }
 
-.containerCardModal-export{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: start;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
+.containerCardModal-export {
+  height: 100%;
+  width: 100%;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  position: fixed;
+  z-index: 99;
 }
 
-.containerModal-export{
-    display: flex;
-    width: 42.4rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.6rem;
+.export-modal-header-text h2 {
+  color: var(--secundria-03);
+  font-size: 2.4rem;
 }
 
-.containerModal-export p{
-    color: #232323;
-    font: var(--plain-text-regular);
-    position: relative;
-    margin-left: -110px;
+.export-modal-header-text p {
+  margin-top: 0.8rem;
+  font: var(--plain-text-regular);
+  color: var(--secundria-03);
 }
 
-.modalButtons{
-    display: flex;
-    flex-direction: row;
-    gap: 3.2rem;
+.containerModal-export {
+  display: flex;
+  flex-direction: column;
 }
 
-.containerCardModal-export button{
-    display: flex;
-    width: 16rem;
-    padding: 1.2rem 1.6rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.8rem;
-    border-radius: 0.8rem;
-    background: var(--primary-02);
-    color: var(--secondary-301);
+.locomotive-modal-close-icon {
+  color: var(--secondary-204);
+}
+
+.icon-size {
+  transform: scale(1.6);
+}
+
+.export-modal-header button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.export-modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }

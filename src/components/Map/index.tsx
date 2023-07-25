@@ -17,7 +17,7 @@ type MapProps = {
 const Map = ({ center, locomotivesRouteDetails, onMarkerClick }: MapProps) => {
   const mapCenterPoint = useMemo(() => center, [center]);
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_API_KEY!,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY!,
   });
 
   if (!isLoaded || !locomotivesRouteDetails) return <LoadingComponent />;

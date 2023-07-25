@@ -1,8 +1,8 @@
 import useReportsModel from "../model/useRepostsModel";
 
 const useReportsViewModel = () => {
-  const { getLastFourReports, reports } = useReportsModel();
-  return { getLastFourReports, reports };
+  const { getLastFourReports } = useReportsModel();
+  return { getLastFourReports };
 };
 
 export default useReportsViewModel;

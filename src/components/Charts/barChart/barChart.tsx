@@ -10,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { ChartBarProps } from "../../../types/charts";
+import "./styles.css";
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 

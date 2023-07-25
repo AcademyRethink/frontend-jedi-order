@@ -4,12 +4,14 @@ import InfoMyAccount from "../../components/InfoMyAccount/Index";
 import Button from "../../components/Button";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Modal from "../../components/Modal";
-import useMyAccountView from "./useMyAccountView";
+import useMyAccountView from "./useMyAccountViewController";
+import { useGlobalContext } from "../../context/GlobalContext";
 
 const MyAccountView = () => {
   const icon = <LogoutIcon />;
-  const { handleLogout, closeModal, openModal, user, userId, isModalOpen } =
+  const { handleLogout, closeModal, openModal, isModalOpen } =
     useMyAccountView();
+  const { globalState } = useGlobalContext();
 
   return (
     <div className="myAccountView">
@@ -19,7 +21,10 @@ const MyAccountView = () => {
           <p>Gerencie sua conta e visualize as suas informações</p>
         </div>
         <Line />
-        <InfoMyAccount userConnected={user} userId={userId} />
+        <InfoMyAccount
+          userConnected={globalState.user}
+          userId={globalState.userId}
+        />
         {isModalOpen && <div className="modalOverlay"></div>}
         {isModalOpen && (
           <Modal

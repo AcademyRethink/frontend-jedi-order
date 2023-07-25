@@ -6,7 +6,7 @@ const baseURL = "user/";
 export const changeAndVerifyPassword = async (
   password: ChangePassword
 ): Promise<void> => {
-  const id = window.location.pathname.split("/").pop();
+  const id = localStorage.getItem("id");
   const token = localStorage.getItem("token");
 
   await api.patch(baseURL + id, password, {

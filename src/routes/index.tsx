@@ -4,7 +4,7 @@ import CenterPanel from "../screens/CenterPanelView/CenterPanelView";
 import LoginView from "../screens/LoginView/LoginView";
 import MyAccountView from "../screens/MyAccountView/MyAccountView";
 import ChangePasswordView from "../screens/ChangePassword/ChangePasswordView";
-import Analysis from "../screens/Analysis/Analysis";
+import Analysis from "../screens/Analysis/AnalysisView";
 import SideBar from "../components/SideBar";
 import "./styles.css";
 import ErrorScreen from "../screens/ErrorScreen";

@@ -4,18 +4,20 @@ const useCommunicationReportsViewModel = () => {
   const {
     failureData,
     failureDataCount,
-    failureTypes,
+    failureFilteredByDays,
     getFailureData,
     getFailureDataCount,
     getFailureTypes,
+    getFilteredFailuresByDays,
   } = useCommunicationReportsModel();
   return {
     failureData,
     failureDataCount,
-    failureTypes,
+    failureFilteredByDays,
     getFailureData,
     getFailureDataCount,
     getFailureTypes,
+    getFilteredFailuresByDays,
   };
 };
 

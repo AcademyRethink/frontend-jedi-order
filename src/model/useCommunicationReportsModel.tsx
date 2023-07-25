@@ -5,18 +5,27 @@ import {
   FailureDataMonth,
   FailureType,
   FormValues,
+  ReportsFilteredByDays,
 } from "../types/charts";
+import { useGlobalContext } from "../context/GlobalContext";
 
 const useCommunicationReportsModel = () => {
-  const [failureTypes, setfailureTypes] = useState<FailureType[]>([]);
+  const { setGlobalState } = useGlobalContext();
   const [failureData, setfailureData] = useState<FailureData[]>([]);
   const [failureDataCount, setfailureDataCount] = useState<FailureDataMonth[]>(
     []
   );
+  const [failureFilteredByDays, setFailureFilteredByDays] = useState<
+    ReportsFilteredByDays[]
+  >([]);
 
   const getFailureTypes = async () => {
-    const foundFailureTypes = await communicationReportsAPI.fetchFailureTypes();
-    setfailureTypes(foundFailureTypes);
+    const foundFailureTypes: FailureType[] =
+      await communicationReportsAPI.fetchFailureTypes();
+    setGlobalState((prevState) => ({
+      ...prevState,
+      failureTypes: foundFailureTypes,
+    }));
     return foundFailureTypes;
   };
 
@@ -35,13 +44,21 @@ const useCommunicationReportsModel = () => {
     return numberOfFailureData;
   };
 
+  const getFilteredFailuresByDays = async (days: number) => {
+    const failureByDays =
+      await communicationReportsAPI.fetchFailuresBySubjectAndDays(days);
+    setFailureFilteredByDays(failureByDays);
+    return failureByDays;
+  };
+
   return {
     getFailureTypes,
-    failureTypes,
     getFailureData,
     failureData,
     getFailureDataCount,
     failureDataCount,
+    getFilteredFailuresByDays,
+    failureFilteredByDays,
   };
 };
 

@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useCommunicationReportsViewModel from "../../viewmodel/useCommunicationReportsViewModel";
-import { FormValues } from "../../types/charts";
+import { useGlobalContext } from "../../context/GlobalContext";
 
 const useAnalysisViewController = () => {
+  const { globalState } = useGlobalContext();
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const {
     failureData,
     failureDataCount,
-    failureTypes,
     getFailureData,
     getFailureDataCount,
     getFailureTypes,
@@ -25,7 +25,7 @@ const useAnalysisViewController = () => {
   };
 
   useEffect(() => {
-    getFailureTypes();
+    if (globalState.failureTypes === undefined) getFailureTypes();
   }, []);
 
   return {
@@ -34,7 +34,7 @@ const useAnalysisViewController = () => {
     isModalOpen,
     failureData,
     failureDataCount,
-    failureTypes,
+    failureTypes: globalState.failureTypes,
     getFailureData,
     getFailureDataCount,
     getFailureTypes,

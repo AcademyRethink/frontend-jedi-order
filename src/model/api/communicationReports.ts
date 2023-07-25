@@ -4,6 +4,7 @@ import {
   FormValues,
   FailureData,
   FailureDataMonth,
+  ReportsFilteredByDays,
 } from "../../types/charts";
 
 const failureTypesBaseURL = "failure-types/";
@@ -28,7 +29,16 @@ const fetchFailureDataCount = async (
   selectedFailureType: number
 ): Promise<FailureDataMonth[]> => {
   const response: FailureDataMonth[] = await api.get(
-    communicationReportsBaseURL + selectedFailureType
+    communicationReportsBaseURL + "/filterbysubjectid/" + selectedFailureType
+  );
+  return response;
+};
+
+const fetchFailuresBySubjectAndDays = async (
+  days: number
+): Promise<ReportsFilteredByDays[]> => {
+  const response: ReportsFilteredByDays[] = await api.get(
+    communicationReportsBaseURL + "/filterbysubjectanddays/" + days
   );
   return response;
 };
@@ -37,6 +47,7 @@ const communicationReportsAPI = {
   fetchFailureData,
   fetchFailureDataCount,
   fetchFailureTypes,
+  fetchFailuresBySubjectAndDays,
 };
 
 export default communicationReportsAPI;

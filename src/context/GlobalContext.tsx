@@ -5,12 +5,19 @@ import {
   RoutesDTO,
   LocomotiveOverviewDTO,
 } from "../types/locomotives";
+import { ReportType } from "../types/reports";
+import { User } from "../types/user";
+import { FailureType } from "../types/charts";
 
 interface GlobalState {
   locomotivesData: LocomotiveDTO[] | undefined;
   locomotivesOverviewData: LocomotiveOverviewDTO | undefined;
   routesData: RoutesDTO | undefined;
   locomotivesRouteDetails: LocomotiveRoutePositionDTO[] | undefined;
+  lastFourReports: ReportType[] | undefined;
+  userId: string | undefined;
+  user: User | undefined;
+  failureTypes: FailureType[] | undefined;
 }
 
 const GlobalContext = createContext<{
@@ -22,6 +29,10 @@ const GlobalContext = createContext<{
     locomotivesOverviewData: undefined,
     routesData: undefined,
     locomotivesRouteDetails: undefined,
+    lastFourReports: undefined,
+    userId: undefined,
+    user: undefined,
+    failureTypes: undefined,
   },
   setGlobalState: () => {},
 });
@@ -32,6 +43,10 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     locomotivesOverviewData: undefined,
     routesData: undefined,
     locomotivesRouteDetails: undefined,
+    lastFourReports: undefined,
+    userId: undefined,
+    user: undefined,
+    failureTypes: undefined,
   });
 
   return (

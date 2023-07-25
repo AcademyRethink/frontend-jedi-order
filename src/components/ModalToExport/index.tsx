@@ -1,71 +1,26 @@
 import "./styles.css";
-import ImageAndWriting from "../ImageAndWriting";
-import Button from "../Button";
+import CloseIcon from "@mui/icons-material/Close";
 
 const ModalToExport = ({
-  label,
-  text,
-  paragraph,
-  fontSize,
-  showTwoButtons,
-  background,
-  color,
+  children,
   onClick,
-  onClickSecondButton,
-  textSecondButton,
-  backgroundSecondButton,
-  colorSecondButton,
 }: {
-  label: string;
-  fontSize: string;
-  paragraph?: any;
-  showTwoButtons: boolean;
-  text: string;
-  background?: string;
-  color?: string;
-  textSecondButton?: string;
-  backgroundSecondButton?: string;
-  colorSecondButton?: string;
-  onClick?: () => void;
-  onClickSecondButton?: () => void;
+  children?: any;
+  onClick: () => void;
 }) => {
   return (
     <div className="modalCard-export">
       <div className="containerCardModal-export">
-        <div className="containerModal-export">
-          <ImageAndWriting
-            icon="check_circle"
-            label={label}
-            color="tertiary"
-            fontSize={fontSize}
-          />
-          <p>{paragraph}</p>
+        <div className="export-modal-header">
+          <div className="export-modal-header-text">
+            <h2>Exportar relatório</h2>
+            <p>Referente a todos os dados</p>
+          </div>
+          <button onClick={onClick}>
+            <CloseIcon className="icon-size locomotive-modal-close-icon" />
+          </button>
         </div>
-        <div className="modalButtons">
-          {showTwoButtons ? (
-            <>
-              <Button
-                text={text}
-                background={background}
-                color={color}
-                onClick={onClick}
-              />
-              <Button
-                text={textSecondButton}
-                background={backgroundSecondButton}
-                color={colorSecondButton}
-                onClick={onClickSecondButton}
-              />
-            </>
-          ) : (
-            <Button
-              text={text}
-              background={background}
-              color={color}
-              onClick={onClick}
-            />
-          )}
-        </div>
+        <div>{children}</div>
       </div>
     </div>
   );

@@ -6,11 +6,11 @@ import Map from "../../components/Map";
 import "./styles.css";
 
 const CenterPanel = () => {
-  const { center, globalState, reports } = useCenterPanelViewController();
+  const { center, globalState } = useCenterPanelViewController();
 
   if (
     !globalState.locomotivesOverviewData ||
-    !reports ||
+    !globalState.lastFourReports ||
     !globalState.locomotivesRouteDetails
   )
     return <LoadingComponent />;
@@ -29,7 +29,7 @@ const CenterPanel = () => {
             tabIndex={0}
             aria-label="Histórico de Falhas"
           >
-            <FailureHistory reports={reports} />
+            <FailureHistory reports={globalState.lastFourReports} />
           </div>
         </div>
         <div className="map-overview-container">

@@ -21,7 +21,10 @@ const useLoginViewController = () => {
         setisLoading(false);
         navigate("/painel-central");
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        setisLoading(false);
+        setError(error.message);
+      });
   };
 
   return {

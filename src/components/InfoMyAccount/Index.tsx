@@ -10,13 +10,16 @@ const InfoMyAccount = ({
   userConnected,
   userId,
 }: {
-  userConnected: User;
-  userId: string;
+  userConnected: User | undefined;
+  userId: string | undefined;
 }) => {
   const navigate = useNavigate();
   const handleChangePasswordButtonClick = () => {
     navigate("/trocar-senha");
   };
+
+  if (userConnected === undefined || userId === undefined) return null;
+
   return (
     <div className="containerMyAccountInfo">
       <div className="myAccountInfo">

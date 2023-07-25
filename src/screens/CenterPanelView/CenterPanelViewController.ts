@@ -7,7 +7,7 @@ import "./styles.css";
 const useCenterPanelViewController = () => {
   useLocomotivesPosition();
   const { globalState } = useGlobalContext();
-  const { getLastFourReports, reports } = useReportsViewModel();
+  const { getLastFourReports } = useReportsViewModel();
 
   const center = useMemo(
     () => ({
@@ -18,12 +18,11 @@ const useCenterPanelViewController = () => {
   );
 
   useEffect(() => {
-    getLastFourReports();
+    if (globalState.lastFourReports === undefined) getLastFourReports();
   }, []);
 
   return {
     globalState,
-    reports,
     center,
   };
 };

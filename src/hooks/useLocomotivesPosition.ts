@@ -18,7 +18,7 @@ export const useLocomotivesPosition = () => {
     }
   };
 
-  useInterval(simulateLocomotives, 20000);
+  useInterval(simulateLocomotives, 60000);
 
   useEffect(() => {
     if (globalState.locomotivesData === undefined) getLocomotives();

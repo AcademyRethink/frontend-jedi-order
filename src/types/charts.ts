@@ -45,3 +45,10 @@ export interface ChartDataset {
   borderColor: string;
   borderWidth: number;
 }
+
+export interface ReportsFilteredByDays {
+  date: string;
+  reports: {
+    [key: string]: string;
+  };
+}
